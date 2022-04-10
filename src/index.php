@@ -1,15 +1,23 @@
 <?php include('header.php'); 
 require "classes/admin.class.php";
 require "classes/structure.class.php";
-
 $con = Structure::header("Login");
+if($_SESSION['role']=='teacher')
+{
+    header('Location: /ims/src/teacher/index.php');
+}
+elseif($_SESSION['role']=='admin')
+{
+    header('Location: /ims/src/admin/index.php');
+}
+elseif($_SESSION['role']=='student')
+{
+    header('Location: /ims/src/student/index.php');
+}
 // echo '<pre>';
 // die;
 // print_r($_SESSION['uid']);
-if(isset($_SESSION['uid'])){
-  if($_SESSION['role'] == 'teacher')
-    header('Location: ../teacher/index.php');
-}
+
 // die;
 // Import main class
 $users = ['admin', 'student','teacher'];
@@ -26,19 +34,7 @@ if(isset($_POST['login']))
       if($data !== null){
         $_SESSION['uid'] = $data['uid'];
         $_SESSION['role'] = $_POST['user_type'];
-        // echo $_SESSION['role'];die;
-        if($_SESSION['role']=='teacher')
-        {
-          header('Location: teacher/index.php');
-        }
-        elseif($_SESSION['role']=='admin')
-        {
-          header('Location: admin/index.php');
-        }
-        else
-        {
-          header('Location: student/index.php');
-        }
+        header('Location: /ims/src/index.php');
       }
       else{
         $eror = 'Invalid credential';

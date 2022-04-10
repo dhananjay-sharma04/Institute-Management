@@ -10,36 +10,22 @@ Session::init();
 
 // Load Header
 Structure::header("Admin Panel - Project");
-
+if($_SESSION['role']=='teacher')
+{
+    header('Location: /ims/src/teacher/index.php');
+}
+elseif($_SESSION['role']=='student')
+{
+    header('Location: /ims/src/student/index.php');
+}
 // Main Content Goes Here
 // Structure::topHeading("Admin Panel");
 ?>
 <?php include("navbar.php"); ?>
-<!-- Dashboard Section -->
-<section class="dashboard">
-    <!-- Dashboard Header -->
-    <div class="top">
-        <i class="uil uil-bars sidebar-toggle"></i>
-        <div class="search-box">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" placeholder="Search...">
-        </div>
-        <div dropdown>
-            <a href=""><img src="Image/Dhananjay.JPG" alt="Profile Photo" /></a>
-            <!-- <ul>
-                <li><a class="dropdown-item" href="#">My profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul> -->
-        </div>
-    </div>
-    <!-- Dashboard Header complete -->
-    <!-- Dashboard content -->
-    <div class="dash-content">
         <!-- Dashboard overview -->
         <div class="overview" id="main-content">
             <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-            <script src="src/javascript/ajax.js"></script>
+            <script src="src/javascript/admin_ajax.js"></script>
             <?php
             // Display Footer
             Structure::footer();

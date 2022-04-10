@@ -58,7 +58,11 @@ class Structure
 
     public static function header($title)
     {
+        error_reporting(5);
         isset($_SESSION) ?: session_start();
+        // echo '<pre>';
+        // print_r($_SERVER);die;
+        
         $servername = 'localhost';
         $username = 'root';
         $serverpass = '';
@@ -82,7 +86,7 @@ class Structure
             <html lang="en">
 
             <head>
-                <base href="http://localhost/ims1/src/">
+                <base href="http://localhost/ims/src/">
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">

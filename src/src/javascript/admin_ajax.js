@@ -2,7 +2,7 @@ $(()=>{
 
     $.ajax({
         type: "POST",
-        url: 'admin/ajax.php',
+        url: 'admin/admin_ajax.php',
         data: {
             request: 'home'
         },
@@ -15,7 +15,7 @@ $(()=>{
 function showstudents(el){
     $.ajax({
         type: "POST",
-        url: 'admin/ajax.php',
+        url: 'admin/admin_ajax.php',
         data: {
             request: 'showstudents'
         },
@@ -27,7 +27,7 @@ function showstudents(el){
 function addstudent(e2){
     $.ajax({
         type: "POST",
-        url: 'admin/ajax.php',
+        url: 'admin/admin_ajax.php',
         data: {
             request: 'addstudent'
         },
@@ -39,7 +39,7 @@ function addstudent(e2){
 function updatestudent(e3){
     $.ajax({
         type: "POST",
-        url: 'admin/ajax.php',
+        url: 'admin/admin_ajax.php',
         data: {
             request: 'updatestudent'
         },
@@ -51,7 +51,7 @@ function updatestudent(e3){
 function deletestudent(e4){
     $.ajax({
         type: "POST",
-        url: 'admin/ajax.php',
+        url: 'admin/admin_ajax.php',
         data: {
             request: 'deletestudent'
         },
@@ -60,10 +60,11 @@ function deletestudent(e4){
         }
       });
 }
+
 function std_attend(e5){
     $.ajax({
         type: "POST",
-        url: 'admin/ajax.php',
+        url: 'admin/admin_ajax.php',
         data: {
             request: 'std_attend'
         },

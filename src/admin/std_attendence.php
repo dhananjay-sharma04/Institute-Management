@@ -2,21 +2,14 @@
 // Import main class
 require "../classes/admin.class.php";
 require "../classes/structure.class.php";
-error_reporting(10);
-// $a = ['a' => 2];
-// Start session
-Session::init();
-// print_r($attend);
-// Check if logged in otherwise redirect to login page
-// Structure::checkLogin();
 
-// Load Header
 Structure::header("Student Attendence - Admin");
+require "../admin/navbar.php";
 
 // Main Content Goes Here
 $admin    = new Admin();
 $students = $admin->view_student(0, false,10);
-if(count($_POST) > 0 ){
+if(isset($_POST['class'])){
   $date = date('Y-m-d',time());
   foreach($_POST as $k => $v){
      $temp=$admin ->attendence($k,$v,$date,$_SESSION['uid']);
