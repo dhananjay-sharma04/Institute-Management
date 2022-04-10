@@ -17,8 +17,8 @@
                 <i class="uil uil-angle-down"></i>
             </div>
             <ul class="sub-menu">
-                <li onclick="showStudents"><span class="link-name" href="">Students</span></li>
-                <li>View</li>
+                <li><span class="link-name" href="">Students</span></li>
+                <li onclick="showStudents()">View</li>
                 <li>Add</li>
                 <li>Update</li>
                 <li>Delete</li>
