@@ -87,8 +87,7 @@ class Structure
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <!-- CSS -->
-                <link rel="stylesheet" href="src/css/style.css">
-                <link rel="stylesheet" href="src/css/tab.css">
+                <link rel="stylesheet" href="theme/css/home.css">
                 <!-- FontAwesome -->
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -124,7 +123,7 @@ class Structure
                     <!-- Dashboard content complete -->
                     </section>
                     <!-- Dashboard Section complete -->
-                    <script src="src/javascript/home.js"></script>
+                    <script src="theme/javascript/home.js"></script>
             </body>
 
             </html>

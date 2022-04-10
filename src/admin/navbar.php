@@ -2,12 +2,12 @@
 <div class="menu-items">
     <ul class="nav-links">
         <li>
-            <div class="icon-link arrow">
+            <div class="icon-link">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
             </div>
                 <ul class="sub-menu blank">
-                    <li><span class="link-name" href="">Home</span></li>
+                    <li><span class="link-name"><b>Home</b></span></li>
                 </ul>
         </li>
         <li>
@@ -17,25 +17,21 @@
                 <i class="uil uil-angle-down"></i>
             </div>
             <ul class="sub-menu">
-                <li onclick="showStudents"><span class="link-name" href="">Students</span></li>
-                <li>View</li>
-                <li>Add</li>
-                <li>Update</li>
-                <li>Delete</li>
+                <li><span class="link-name"><b>Students</b></span></li>
+                <li onclick="showStudents()">Manage</li>
+                <li onclick="addStudent()">Add</li>
             </ul>
         </li>
         <li>
-            <div class="icon-link">
+            <div class="icon-link arrow">
                     <i class="uil uil-users-alt"></i>
                     <span class="link-name">Teachers</span>
                 <i class="uil uil-angle-down"></i>
             </div>
             <ul class="sub-menu">
-                <li><span class="link-name" href="">Teachers</span></li>
-                <li>View</li>
+                <li><span class="link-name"><b>Teachers</b></span></li>
+                <li>Manage</li>
                 <li>Add</li>
-                <li>Update</li>
-                <li>Delete</li>
             </ul>
         </li>
         <li>
@@ -44,7 +40,7 @@
                 <span class="link-name">Time Table</span>
             </div>
             <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Time Table</span></li>
+                <li><span class="link-name"><b>Time Table</b></span></li>
             </ul>
         </li>
         <li>
@@ -53,7 +49,7 @@
                 <span class="link-name">Attendence</span>
             </div>
             <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Attendence</span></li>
+                <li><span class="link-name"><b>Attendence</b></span></li>
             </ul>
         </li>
     </ul>
