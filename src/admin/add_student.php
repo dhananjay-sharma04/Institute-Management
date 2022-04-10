@@ -10,7 +10,7 @@ Session::init();
 // Structure::checkLogin();
 
 // Load Header
-Structure::header("Add Student - Admin");
+// Structure::header("Add Student - Admin");
 
 // Main Content Goes Here
 // Check if form submitted

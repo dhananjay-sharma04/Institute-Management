@@ -18,10 +18,10 @@
             </div>
             <ul class="sub-menu">
                 <li><span class="link-name" href="">Students</span></li>
-                <li onclick="showStudents()">View</li>
-                <li>Add</li>
-                <li>Update</li>
-                <li>Delete</li>
+                <li onclick="showstudents()">View</li>
+                <li onclick="addstudent()">Add</li>
+                <li onclick="updatestudent()">Update</li>
+                <li onclick="deletestudent()">Delete</li>
             </ul>
         </li>
         <li>
@@ -53,7 +53,7 @@
                 <span class="link-name">Attendence</span>
             </div>
             <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Attendence</span></li>
+                <li onclick="std_attend()"><span class="link-name" >Attendence</span></li>
             </ul>
         </li>
     </ul>

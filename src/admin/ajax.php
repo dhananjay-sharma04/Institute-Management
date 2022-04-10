@@ -12,7 +12,7 @@
                 </div>
                 <!-- Dashboard Title complete -->
                 <!-- Dashboard Main content -->
-                <div class="boxes">
+                <!-- <div class="boxes">
                     <div class="box box1">
                         <i class="fa fa-thumbs-up" aria-hidden="true"></i>
                         <span class="text">Total Likes</span>
@@ -28,14 +28,34 @@
                         <span class="text">Total Shares</span>
                         <span class="number">10,120</span>
                     </div>
-                </div>
+                </div> -->
             <?php
             break;
-            case 'showStudents':
+            case 'showstudents':
                 ?>
                 <?php include("view_students.php"); ?>
                 <?php
             break;
+            case 'addstudent';
+              ?>
+              <?php include("add_student.php");?>
+              <?php
+              break;
+            case 'updatestudent';
+              ?>
+              <?php include("update_student.php");?>
+              <?php
+              break;
+            case 'deletestudent';
+              ?>
+              <?php include("delete_student.php");?>
+              <?php
+              break;
+            case 'std_attend';
+              ?>
+              <?php include("std_attendence.php");?>
+              <?php
+              break;
             default:
                 echo 'unknown request';
             break;

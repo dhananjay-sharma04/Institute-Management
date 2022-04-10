@@ -18,11 +18,12 @@ $students = $admin->view_student(0, false);
 Structure::topHeading("View Students");
 echo('<hr>
         <table class="table table-striped table-hover text-secondary">
-        <caption><a href="'.Structure::nakedURL("").'" style="text-decoration: none;">Go back!</a></caption>
+       
         <thead class="bg-dark text-white">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>
+            <th scope="col">Name</th>&nbsp
+            <th scope="col">Class</th>
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
             <th scope="col">Actions</th>
@@ -31,6 +32,7 @@ echo('<hr>
         <tbody>');
 
 $counter = 0;
+// print_r($students);
 foreach ($students as $student) {
     $counter++;
     // if ($student["subjects"] == "") {
@@ -42,7 +44,8 @@ foreach ($students as $student) {
 
     echo('<tr>
         <td scope="row">'.$counter.'</td>
-        <td>'.$student["name"].'</td>
+        <td>'.$student["name"].'</td>&nbsp
+        <td>'.$student["class"].'</td>
         <td>'.$student["email"].'</td>
         <td>'.$student["phone_number"].'</td>
         <td>
