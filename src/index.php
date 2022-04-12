@@ -34,6 +34,7 @@ if(isset($_POST['login']))
       if($data !== null){
         $_SESSION['uid'] = $data['uid'];
         $_SESSION['role'] = $_POST['user_type'];
+        $_SESSION['name'] = $data['name'];
         header('Location: /ims/src/index.php');
       }
       else{

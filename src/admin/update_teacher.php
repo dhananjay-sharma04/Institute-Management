@@ -11,6 +11,8 @@ Session::init();
 
 // Load Header
 Structure::header("Update Teacher - Admin");
+// require "../admin/navbar.php";
+
 
 // Main Content Goes Here
 // Check if form submitted
@@ -25,7 +27,14 @@ if (Structure::if_all_inputs_exists(array("teacher_id", "teacher_name", "teacher
         filter_input(INPUT_POST, "password", FILTER_DEFAULT)
     )) === true) {
         // On success
-        Structure::successBox("Update Teacher", "Successfully updated teacher!", Structure::nakedURL("view_teachers.php"));
+        // Structure::successBox("Update Teacher", "Successfully updated teacher!", Structure::nakedURL("view_teachers.php"));
+        ?>
+        <script>
+          alert('Successfully updated teacher!');
+          location.href='admin/index.php';
+
+        </script>
+        <?php
     } else {
         // On failure
         Structure::errorBox("Update Teacher", "Unable to update teacher!");
@@ -65,7 +74,6 @@ if (Structure::if_all_inputs_exists(array("teacher_id", "teacher_name", "teacher
             <div class="row">
               <div class="col-sm-12">
                   <button type="submit" class="btn btn-success btn-small">Submit</button>
-                  <a class="btn btn-primary btn-small" href="'.Structure::nakedURL("view_teachers.php").'" role="button">Go back!</a>
                </div>
             </div>
           </form>

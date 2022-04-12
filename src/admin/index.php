@@ -10,14 +10,7 @@ Session::init();
 
 // Load Header
 Structure::header("Admin Panel - Project");
-if($_SESSION['role']=='teacher')
-{
-    header('Location: /ims/src/teacher/index.php');
-}
-elseif($_SESSION['role']=='student')
-{
-    header('Location: /ims/src/student/index.php');
-}
+
 // Main Content Goes Here
 // Structure::topHeading("Admin Panel");
 ?>

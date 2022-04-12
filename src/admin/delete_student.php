@@ -21,7 +21,14 @@ if (isset($_GET['student_id']) ) {
 
     if ($admin->delete_student(filter_input(INPUT_GET, "student_id", FILTER_DEFAULT)) == true) {
         // On success
-        Structure::successBox("Delete Student", "Successfully deleted student!", Structure::nakedURL("view_students.php"));
+        // Structure::successBox("Delete Student", "Successfully deleted student!", Structure::nakedURL("view_students.php"));
+        ?>
+        <script>
+          alert('Successfully deleted Student!');
+          location.href='admin/index.php';
+
+        </script>
+        <?php
     } else {
         // On failure
         Structure::errorBox("Delete Student", "Unable to delete student!");

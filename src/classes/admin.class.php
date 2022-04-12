@@ -30,7 +30,8 @@ class Admin extends Config
         
         // check if items to insert exists in the input array or note
         if ($single == true && $student_id != 0) {
-            $insert = $this->db->query("SELECT * FROM `user` WHERE role='student' and class=$class and uid = " . $student_id);
+            // echo"SELECT * FROM `user` WHERE role='student' and class=$class and uid = " . $student_id;
+            $insert = $this->db->query("SELECT * FROM `user` WHERE role='student' and class like '$class' and uid = " . $student_id);
         } elseif($student_id == 0 && $single ==false) {
             // $insert = $this->db->query("SELECT DISTINCT level2.student_id, level2.student_name, level2.student_phone_number, level2.email, level2.teacher_name, GROUP_CONCAT(DISTINCT(subject.subject_name) SEPARATOR '<br>') AS subjects FROM (SELECT DISTINCT level.student_id, level.student_name, level.student_phone_number, level.email, level.teacher_name, assigned.subject_id FROM (SELECT DISTINCT student.student_id, student.student_name, student.student_phone_number, student.email, student.teacher_id, teacher.teacher_name FROM student LEFT OUTER JOIN teacher ON student.teacher_id = teacher.teacher_id) level NATURAL LEFT JOIN assigned) level2 NATURAL LEFT JOIN subject GROUP BY level2.student_id ORDER BY level2.student_id ASC");
             $insert = $this->db->query("SELECT * FROM USER WHERE ROLE=?", 'student');
@@ -56,7 +57,7 @@ class Admin extends Config
         // check if items to insert exists in the input array or note
         if (isset($student_id) && isset($student_name) && isset($student_phone_number) && isset($email) && isset($password)) {
         //    $update = $this->db->query("UPDATE `user` SET `name`=?,`phone_number`=?,`email`=?,`password`=?,`role`=? WHERE 'uid'=?", $student_name, $student_phone_number, $email, $password, $role, $student_id);
-            $update = $this->db->update("UPDATE `user` SET `name`='$student_name',`phone_number`='$student_phone_number',`email`='$email',`password`='$password',`role`='$role' WHERE uid =  $student_id");
+            $update = $this->db->update("UPDATE `user` SET `name`='$student_name',`phone_number`='$student_phone_number',`email`='$email',`password`='$password',`role`='$role',`class`= '9' WHERE uid =  $student_id");
             // var_dump($update);
             // if more than 1 row returned then it insertion was successfull
             // return ($update->affectedRows() > 0);
@@ -123,7 +124,7 @@ class Admin extends Config
         // check if items to insert exists in the input array or note
         if (isset($teacher_name) && isset($teacher_phone_number) && isset($email) && isset($password) && strlen($password) > 5 ) {
             $insert = $this->db->query("INSERT INTO `user`(`name`, `phone_number`, `email`, `password`, `role`) VALUES (?,?,?,?,?)", $teacher_name, $teacher_phone_number, $email, $password, 'teacher');
-                echo'dd';
+                // echo'dd';
             // if more than 1 row returned then it insertion was successfull
             if ($insert->numRows() > 0) {
                 $success = true;

@@ -10,7 +10,8 @@ Session::init();
 Structure::checkLogin();
 
 // Load Header
-Structure::header("Add Teacher - Admin");
+// Structure::header("Add Teacher - Admin");
+
 
 // Main Content Goes Here
 // Check if form submitted
@@ -57,7 +58,6 @@ if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number"
             <div class="row">
               <div class="col-sm-12">
                   <button type="submit" class="btn btn-success btn-small">Submit</button>
-                  <a class="btn btn-primary btn-small" href="'.Structure::nakedURL("").'" role="button">Go back!</a>
                </div>
             </div>
           </form>

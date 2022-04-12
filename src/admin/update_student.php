@@ -11,6 +11,7 @@ Session::init();
 
 // Load Header
 Structure::header("Update Student - Admin");
+require "../admin/navbar.php";
 
 // Main Content Goes Here
 // Check if form submitted
@@ -25,19 +26,26 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
         filter_input(INPUT_POST, "password", FILTER_DEFAULT), 'student'
     )) === true) {
         // On success
-        Structure::successBox("Update Student", "Successfully updated student!", Structure::nakedURL("view_students.php"));
+        // Structure::successBox("Update Student", "Successfully updated student!", Structure::nakedURL("view_students.php"));
+        ?>
+        <script>
+          alert('Successfully updated student!');
+          location.href='admin/index.php';
+
+        </script>
+        <?php
     } else {
         // On failure
         Structure::errorBox("Update Student", "Unable to update student!");
     }
     //$admin->close_DB();
 } elseif (isset($_GET['student_id'])) {
-    $admin    = new Admin();
-    $student = $admin->view_student(filter_input(INPUT_GET, "student_id", FILTER_DEFAULT), true);
-
-    if (!isset($student["uid"])) {
-        Structure::errorBox("Update Student", "Select a valid student!");
-    } else {
+  $admin    = new Admin();
+  $student = $admin->view_student(filter_input(INPUT_GET, "student_id", FILTER_DEFAULT), true);
+  
+  if (!isset($student["uid"])) {
+    Structure::errorBox("Update Student", "Select a valid student!");
+  } else {
         // Form to fill details
         echo('<main role="main" class="container mt-3  mx-auto">');
         Structure::topHeading("Update Student");

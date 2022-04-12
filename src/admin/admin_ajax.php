@@ -56,6 +56,17 @@
               <?php include("std_attendence.php");?>
               <?php
               break;
+            case 'view_teacher';
+              ?>
+              <?php include("view_teachers.php");?>
+              <?php
+              break;
+            case 'add_teacher';
+              ?>
+              <?php include("add_teacher.php");?>
+              <?php
+              break;
+            
             default:
                 echo 'unknown request';
             break;

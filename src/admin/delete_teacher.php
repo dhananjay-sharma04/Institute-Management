@@ -19,7 +19,14 @@ if (isset($_GET['teacher_id'])) {
     
     if ($admin->delete_teacher(filter_input(INPUT_GET, "teacher_id", FILTER_DEFAULT)) == true) {
         // On success
-        Structure::successBox("Delete Teacher", "Successfully deleted teacher!", Structure::nakedURL("view_teachers.php"));
+        // Structure::successBox("Delete Teacher", "Successfully deleted teacher!", Structure::nakedURL("view_teachers.php"));
+        ?>
+        <script>
+          alert('Successfully deleted teacher!');
+          location.href='admin/index.php';
+
+        </script>
+        <?php
     } else {
         // On failure
         Structure::errorBox("Delete Teacher", "Unable to delete teacher!");

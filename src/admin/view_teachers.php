@@ -10,7 +10,7 @@ Session::init();
 // Structure::checkLogin();
 
 // Load Header
-Structure::header("View Teachers - Admin");
+// Structure::header("View Teachers - Admin");
 
 // Main Content Goes Here
 $admin    = new Admin();

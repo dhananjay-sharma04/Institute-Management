@@ -1,3 +1,18 @@
+<?php
+if($_SESSION['role']=='teacher')
+{
+    header('Location: /ims/src/teacher/index.php');
+}
+elseif($_SESSION['role']=='student')
+{
+    header('Location: /ims/src/student/index.php');
+}
+elseif(!isset($_SESSION['role'])){
+    header('Location: /ims/src/index.php');    
+}
+
+// print_r($_SESSION);x
+?>
 <!-- Navigation Menu List -->
 <div class="menu-items">
     <ul class="nav-links">
@@ -7,7 +22,7 @@
                     <span class="link-name">Home</span>
             </div>
                 <ul class="sub-menu blank">
-                    <li><span class="link-name" href="">Home</span></li>
+                    <li><span class="link-name">Home</span></li>
                 </ul>
         </li>
         <li>
@@ -18,24 +33,20 @@
             </div>
             <ul class="sub-menu">
                 <li><span class="link-name" href="">Students</span></li>
-                <li onclick="showstudents()">View</li>
+                <li onclick="showstudents()" id="viewstudent">View</li>
                 <li onclick="addstudent()">Add</li>
-                <li onclick="updatestudent()">Update</li>
-                <li onclick="deletestudent()">Delete</li>
             </ul>
         </li>
         <li>
-            <div class="icon-link">
+            <div class="icon-link arrow">
                     <i class="uil uil-users-alt"></i>
                     <span class="link-name">Teachers</span>
                 <i class="uil uil-angle-down"></i>
             </div>
             <ul class="sub-menu">
                 <li><span class="link-name" href="">Teachers</span></li>
-                <li>View</li>
-                <li>Add</li>
-                <li>Update</li>
-                <li>Delete</li>
+                <li onclick="showteacher()">View</li>
+                <li onclick="addteacher()">Add</li>
             </ul>
         </li>
         <li>
@@ -50,7 +61,7 @@
         <li>
             <div class="icon-link" onclick="std_attend()">
                 <i class="uil uil-user-check" ></i>
-                <span class="link-name"><a href="admin/std_attendence.php">Attendence</a></span>
+                <span class="link-name"><a onclick="std_attend()">Attendence</a></span>
             </div>
             <ul class="sub-menu blank">
                 <li><span class="link-name" >Attendence</span></li>
@@ -96,6 +107,9 @@
             <i class="fa fa-search" aria-hidden="true"></i>
             <input type="text" placeholder="Search...">
         </div>
+        <?php
+            echo $_SESSION['name'];
+        ?>
         <div dropdown>
             <a href=""><img src="Image/Dhananjay.JPG" alt="Profile Photo" /></a>
             <!-- <ul>

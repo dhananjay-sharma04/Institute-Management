@@ -39,7 +39,7 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
     echo('<main role="main" class="container mx-auto mt-3">');
     Structure::topHeading("Add Student");
     echo('<hr>
-          <form method="POST">
+          <form method="POST" action="admin/add_student.php">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" name="student_name" class="form-control" id="student_name" aria-describedby="student_name">
@@ -70,7 +70,7 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
             <div class="row">
               <div class="col-sm-12">
                   <button type="submit" class="btn btn-success btn-small">Submit</button>
-                  <a class="btn btn-primary btn-small" href="'.Structure::nakedURL("view_students.php").'" role="button">Go back!</a>
+                  <a class="btn btn-primary btn-small" href="'.Structure::nakedURL("index.php").'" role="button">Go back!</a>
                </div>
             </div>
           </form>

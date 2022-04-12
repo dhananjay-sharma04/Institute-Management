@@ -92,7 +92,6 @@ class Structure
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <!-- CSS -->
                 <link rel="stylesheet" href="src/css/style.css">
-                <link rel="stylesheet" href="src/css/tab.css">
                 <!-- FontAwesome -->
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -206,7 +205,6 @@ class Structure
           <h1 class="display-4 text">' . $title . '</h1>
           <hr>
           <div class="alert alert-success" role="alert">' . $message . '</div>
-          <a class="btn btn-primary btn-small" href="' . $link . '" role="button">Go back!</a>
         </main>');
         }
 

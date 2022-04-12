@@ -10,7 +10,7 @@ Session::init();
 // Structure::checkLogin();
 
 // Load Header
-Structure::header("Home - Teacher Panel");
+// Structure::header("Home - Teacher Panel");
 
 // Main Content Goes Here
 $teacher    = new Teacher();

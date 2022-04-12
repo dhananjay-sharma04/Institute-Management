@@ -17,9 +17,8 @@ if(isset($_POST['class'])){
 }
 echo('<main role="main" class="container mt-3  mx-auto">');
 Structure::topHeading("Student Attendence");
-echo('<form method="post"><hr>
+echo('<form method="post" action="admin/std_attendence.php"><hr>
         <table class="table table-striped table-hover text-secondary">
-        <caption><a href="'.Structure::nakedURL("").'" style="text-decoration: none;">Go back!</a></caption>
         <thead class="bg-dark text-white">
         <select name="class" id="std">
           <option value=""disabled selected>choose your class </option>

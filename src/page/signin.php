@@ -26,6 +26,7 @@ if(isset($_POST['login']))
       if($data !== null){
         $_SESSION['uid'] = $data['uid'];
         $_SESSION['role'] = $_POST['user_type'];
+        $_SESSION['name'] = $data['name'];
         // echo $_SESSION['role'];die;
         if($_SESSION['role']=='teacher')
         {
