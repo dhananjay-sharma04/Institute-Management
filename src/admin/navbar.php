@@ -55,7 +55,7 @@ elseif(!isset($_SESSION['role'])){
                 <span class="link-name">Time Table</span>
             </div>
             <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Time Table</span></li>
+                <li><span class="link-name"><b>Time Table</b></span></li>
             </ul>
         </li>
         <li>

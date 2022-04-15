@@ -127,7 +127,7 @@ class Structure
                     <!-- Dashboard content complete -->
                     </section>
                     <!-- Dashboard Section complete -->
-                    <script src="src/javascript/home.js"></script>
+                    <script src="theme/javascript/home.js"></script>
             </body>
 
             </html>
