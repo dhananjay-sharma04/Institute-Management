@@ -11,7 +11,7 @@ $(()=>{
         }
       });
 })
-
+ 
 function showstudents(e){
     $.ajax({
         type: "POST",
@@ -23,7 +23,7 @@ function showstudents(e){
             $('#main-content').html(e)
         }
       });
-}
+} 
 function addstudent(e){
     $.ajax({
         type: "POST",
@@ -61,12 +61,13 @@ function addstudent(e){
 //       });
 // }
 
-function std_attend(e){
+function std_attend(stdclass = 0){
     $.ajax({
         type: "POST",
         url: 'admin/admin_ajax.php',
         data: {
-            request: 'std_attend'
+            request: 'std_attend',
+            stdclass: stdclass
         },
         success: (e)=>{
             $('#main-content').html(e)

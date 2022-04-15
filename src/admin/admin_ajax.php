@@ -29,9 +29,9 @@
                             <span class="number">10,120</span>
                         </div>
                     </div>
-                <?php
+                <?php 
             break;
-            case 'showStudents':
+            case 'showstudents':
                 ?>
                 <!-- Dashboard Title -->
                 <div class="title">

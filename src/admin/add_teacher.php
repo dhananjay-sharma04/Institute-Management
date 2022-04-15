@@ -17,7 +17,6 @@ Structure::checkLogin();
 // Check if form submitted
 if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number", "email", "password"), "POST") == true) {
     $admin = new Admin();
-    echo'dd';
     if (is_bool($admin->create_teacher(
         filter_input(INPUT_POST, "teacher_name", FILTER_DEFAULT),
         filter_input(INPUT_POST, "teacher_phone_number", FILTER_DEFAULT),
@@ -37,7 +36,7 @@ if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number"
     echo('<main role="main" class="container mt-3 mx-auto">');
     Structure::topHeading("Add Teacher");
     echo('<hr>
-          <form method="POST">
+          <form method="POST" action="admin/add_teacher.php">
             <div class="form-group">
               <label for="name">Name</label>
               <input type="text" name="teacher_name" class="form-control" id="teacher_name" aria-describedby="teacher_name">

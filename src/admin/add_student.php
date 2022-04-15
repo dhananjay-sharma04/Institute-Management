@@ -6,15 +6,6 @@ require "../classes/structure.class.php";
 // Start session
 Session::init();
 
-// Check if logged in otherwise redirect to login page
-// Structure::checkLogin();
-
-// Load Header
-// Structure::header("Add Student - Admin");
-
-// Main Content Goes Here
-// Check if form submitted
-
 if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number","class" ,"email", "password"), "POST") == true) {
   // print_r($_POST);
     $admin = new Admin();
@@ -26,11 +17,15 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
         'student'
         ,filter_input(INPUT_POST, "class", FILTER_DEFAULT),
     ) === true) {
-        // On success
-        Structure::successBox("Add Student", "Successfully added student!", Structure::nakedURL("view_students.php"));
+      echo"<script>
+            alert('Successfully added student!');
+            location.href='index.php';
+          </script>";
     } else {
-        // On failure
-        Structure::errorBox("Add Student", "Unable to add a student!");
+        echo"<script>
+            alert('insertion failed');
+            location.href='index.php';
+          </script>";
     }
     $admin->close_DB();
 } else {
@@ -42,12 +37,12 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
           <form method="POST" action="admin/add_student.php">
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" name="student_name" class="form-control" id="student_name" aria-describedby="student_name">
+              <input type="text" name="student_name" class="form-control" id="student_name" aria-describedby="student_name" required>
               </div>
               <div class="form-group">
               <label for="Clas">Class</label>
                 <div class="class-list">
-                  <select name="class" id="std">
+                  <select name="class" id="std" required>
                     <option value=""disabled selected>choose your class </option>
                     <option value="10">10</option>
                     <option value="9">9</option>
@@ -57,15 +52,15 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
               </div>
             <div class="form-group">
               <label for="student_phone_number">Phone Number</label>
-              <input type="number" name="student_phone_number" class="form-control" id="student_phone_number" aria-describedby="student_phone_number">
+              <input type="number" name="student_phone_number" class="form-control" id="student_phone_number" aria-describedby="student_phone_number" required>
             </div>
             <div class="form-group">
               <label for="email">Email address</label>
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="email">
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="email" required>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" name="password" id="password" class="form-control" id="password">
+              <input type="password" name="password" id="password" class="form-control" id="password" required>
             </div>
             <div class="row">
               <div class="col-sm-12">

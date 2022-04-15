@@ -11,47 +11,46 @@ Session::init();
 
 // Load Header
 Structure::header("Update Teacher - Admin");
-// require "../admin/navbar.php";
-
+require "../admin/navbar.php";
 
 // Main Content Goes Here
 // Check if form submitted
 if (Structure::if_all_inputs_exists(array("teacher_id", "teacher_name", "teacher_phone_number", "email", "password"), "POST") == true) {
-    $admin = new Admin();
-
-    if (is_bool($admin->update_teacher(
-        filter_input(INPUT_POST, "teacher_id", FILTER_DEFAULT),
-        filter_input(INPUT_POST, "teacher_name", FILTER_DEFAULT),
-        filter_input(INPUT_POST, "teacher_phone_number", FILTER_DEFAULT),
-        filter_input(INPUT_POST, "email", FILTER_DEFAULT),
-        filter_input(INPUT_POST, "password", FILTER_DEFAULT)
+  $admin = new Admin();
+  
+  if (is_bool($admin->update_teacher(
+    filter_input(INPUT_POST, "teacher_id", FILTER_DEFAULT),
+    filter_input(INPUT_POST, "teacher_name", FILTER_DEFAULT),
+    filter_input(INPUT_POST, "teacher_phone_number", FILTER_DEFAULT),
+    filter_input(INPUT_POST, "email", FILTER_DEFAULT),
+    filter_input(INPUT_POST, "password", FILTER_DEFAULT)
     )) === true) {
-        // On success
-        // Structure::successBox("Update Teacher", "Successfully updated teacher!", Structure::nakedURL("view_teachers.php"));
-        ?>
+      // On success
+      // Structure::successBox("Update Teacher", "Successfully updated teacher!", Structure::nakedURL("view_teachers.php"));
+      ?>
         <script>
           alert('Successfully updated teacher!');
           location.href='admin/index.php';
-
-        </script>
+          
+          </script>
         <?php
     } else {
-        // On failure
-        Structure::errorBox("Update Teacher", "Unable to update teacher!");
+      // On failure
+      Structure::errorBox("Update Teacher", "Unable to update teacher!");
     }
-
+    
     //$admin->close_DB();
-} elseif (isset($_GET['teacher_id'])) {
+  } elseif (isset($_GET['teacher_id'])) {
     $admin    = new Admin();
     $teacher  = $admin->view_teacher(filter_input(INPUT_GET, "teacher_id", FILTER_DEFAULT), true);
-
+    
     if (!isset($teacher["uid"])) {
-        Structure::errorBox("Update Teacher", "Select a valid teacher!");
+      Structure::errorBox("Update Teacher", "Select a valid teacher!");
     } else {
-        // Form to fill details
-        echo('<main role="main" class="container mt-3  mx-auto">');
-        Structure::topHeading("Update Teacher");
-        echo('<hr>
+      // Form to fill details
+      echo('<main role="main" class="container mt-3  mx-auto">');
+      Structure::topHeading("Update Teacher");
+      echo('<hr>
           <form method="POST">
             <input type="hidden" name="teacher_id" value="'._esc($teacher["uid"]).'">
             <div class="form-group">

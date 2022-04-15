@@ -37,12 +37,6 @@ echo('<hr>
 $counter = 0;
 foreach ($teachers as $teacher) {
     $counter++;
-
-    // if ($teacher["students"] == "") {
-    //     $teacher["students"] = "<span class='text-danger'>None</span>";
-    // } else {
-    //     $teacher["students"] = str_replace(", ", "<br/>", $teacher["students"]);
-    // }
     echo('<tr>
         <th scope="row">'.($counter).'</th>
         <td>'.($teacher['name']).'</td>

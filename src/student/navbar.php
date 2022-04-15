@@ -20,6 +20,15 @@
             </ul>
         </li>
         <li>
+            <div class="icon-link">
+                <i class="uil uil-clock"></i>
+                <span class="link-name">Send homework</span>
+            </div>
+            <ul class="sub-menu blank">
+                <li><span class="link-name" href="">Send homework</span></li>
+            </ul>
+        </li>
+        <li>
             <div class="icon-link" onclick="std_attend()">
                 <i class="uil uil-user-check" ></i>
                 <span class="link-name">Attendence</span>

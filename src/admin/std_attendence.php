@@ -8,7 +8,8 @@ require "../admin/navbar.php";
 
 // Main Content Goes Here
 $admin    = new Admin();
-$students = $admin->view_student(0, false,10);
+$students = $admin->view_student(0, false,$_POST['stdclass']);
+// print_r($students);die;
 if(isset($_POST['class'])){
   $date = date('Y-m-d',time());
   foreach($_POST as $k => $v){
@@ -20,7 +21,7 @@ Structure::topHeading("Student Attendence");
 echo('<form method="post" action="admin/std_attendence.php"><hr>
         <table class="table table-striped table-hover text-secondary">
         <thead class="bg-dark text-white">
-        <select name="class" id="std">
+        <select name="class" id="stdclass" onchange="std_attend($(this)[0].value)">
           <option value=""disabled selected>choose your class </option>
           <option value="10">10</option>
           <option value="9">9</option>
@@ -64,8 +65,7 @@ echo(' <button type="submit">SUBMIT</button></form>');
 
 $admin->close_DB();
 
-// Display Footer
-Structure::footer();
+// Structure::footer();
 
 // delete object
 unset($admin);

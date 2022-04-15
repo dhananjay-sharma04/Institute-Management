@@ -17,31 +17,34 @@ require "../admin/navbar.php";
 // Check if form submitted
 if (Structure::if_all_inputs_exists(array("student_id","student_name","student_phone_number","email","password"), "POST") == true) {
     $admin = new Admin();
-    // echo"hello";
-    if (is_bool($admin->update_student(
+    if ($admin->update_student(
         filter_input(INPUT_POST, "student_id", FILTER_DEFAULT),
         filter_input(INPUT_POST, "student_name", FILTER_DEFAULT),
         filter_input(INPUT_POST, "student_phone_number", FILTER_DEFAULT),
         filter_input(INPUT_POST, "email", FILTER_DEFAULT),
         filter_input(INPUT_POST, "password", FILTER_DEFAULT), 'student'
-    )) === true) {
+    ) === true) {
         // On success
         // Structure::successBox("Update Student", "Successfully updated student!", Structure::nakedURL("view_students.php"));
         ?>
         <script>
-          alert('Successfully updated student!');
+          alert('updation failed');
           location.href='admin/index.php';
-
         </script>
         <?php
     } else {
-        // On failure
-        Structure::errorBox("Update Student", "Unable to update student!");
+      // On failure
+      // Structure::errorBox("Update Student", "Unable to update student!");
+      echo"<script>
+        alert('Successfully updated student!');
+        location.href='admin/index.php';
+      </script>";
     }
     //$admin->close_DB();
 } elseif (isset($_GET['student_id'])) {
   $admin    = new Admin();
   $student = $admin->view_student(filter_input(INPUT_GET, "student_id", FILTER_DEFAULT), true);
+  // echo'dss';die;
   
   if (!isset($student["uid"])) {
     Structure::errorBox("Update Student", "Select a valid student!");

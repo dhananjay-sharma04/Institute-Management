@@ -2,17 +2,20 @@
 require "classes/admin.class.php";
 require "classes/structure.class.php";
 $con = Structure::header("Login");
-if($_SESSION['role']=='teacher')
-{
-    header('Location: /ims/src/teacher/index.php');
-}
-elseif($_SESSION['role']=='admin')
-{
-    header('Location: /ims/src/admin/index.php');
-}
-elseif($_SESSION['role']=='student')
-{
-    header('Location: /ims/src/student/index.php');
+if(isset($_SESSION['role'])){
+  
+  if($_SESSION['role']=='teacher')
+  {
+      header('Location: /ims/src/teacher/index.php');
+  }
+  elseif($_SESSION['role']=='admin')
+  {
+      header('Location: /ims/src/admin/index.php');
+  }
+  elseif($_SESSION['role']=='student')
+  {
+      header('Location: /ims/src/student/index.php');
+  }
 }
 // echo '<pre>';
 // die;

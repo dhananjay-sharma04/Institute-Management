@@ -55,12 +55,16 @@ class Admin extends Config
     public function update_student($student_id, $student_name, $student_phone_number, $email, $password, $role)
     {
         // check if items to insert exists in the input array or note
-        if (isset($student_id) && isset($student_name) && isset($student_phone_number) && isset($email) && isset($password)) {
-        //    $update = $this->db->query("UPDATE `user` SET `name`=?,`phone_number`=?,`email`=?,`password`=?,`role`=? WHERE 'uid'=?", $student_name, $student_phone_number, $email, $password, $role, $student_id);
-            $update = $this->db->update("UPDATE `user` SET `name`='$student_name',`phone_number`='$student_phone_number',`email`='$email',`password`='$password',`role`='$role',`class`= '9' WHERE uid =  $student_id");
-            // var_dump($update);
-            // if more than 1 row returned then it insertion was successfull
-            // return ($update->affectedRows() > 0);
+        if (
+            isset($student_id) &&
+            isset($student_name) &&
+            isset($student_phone_number) && 
+            isset($email) && 
+            isset($password)
+            ) {
+            
+            $update = $this->db->update("UPDATE `user` SET `name`='$student_name',`phone_number`='$student_phone_number',`email`='$email',`password`='$password',`role`='$role' WHERE uid =  $student_id");
+            return $update;
         }
 
         return false;

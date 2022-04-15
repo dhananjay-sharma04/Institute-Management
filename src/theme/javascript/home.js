@@ -1,14 +1,17 @@
-const body = document.querySelector("body"),
-      modeToggle = body.querySelector(".mode-toggle");
-      sidebar = body.querySelector("nav");
-      sidebarToggle = body.querySelector(".sidebar-toggle");
-      
-      let getMode = localStorage.getItem("mode");
-      if (getMode && getMode === "dark") {
-          body.classList.toggle("dark");
-        }
-        
-        let getStatus = localStorage.getItem("status");
+// if(typeof body == 'undefined'){
+    var body = document.querySelector("body");
+// }
+
+modeToggle = body.querySelector(".mode-toggle");
+sidebar = body.querySelector("nav");
+sidebarToggle = body.querySelector(".sidebar-toggle");
+
+var getMode = localStorage.getItem("mode");
+if (getMode && getMode === "dark") {
+    body.classList.toggle("dark");
+}
+
+var getStatus = localStorage.getItem("status");
 if (getStatus && getStatus === "close") {
     sidebar.classList.toggle("close");
 }
@@ -31,7 +34,7 @@ sidebarToggle.addEventListener("click", () => {
         localStorage.setItem("status", "open")
     }
 })
-let arrow = document.querySelectorAll(".arrow");
+var arrow = document.querySelectorAll(".arrow");
 for (var i = 0; i < arrow.length; i++){
     arrow[i].addEventListener("click", (e) => {
         let arrowParent = e.target.parentElement.parentElement;

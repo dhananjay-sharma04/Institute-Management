@@ -58,7 +58,7 @@ class Structure
 
     public static function header($title)
     {
-        error_reporting(5);
+        error_reporting(7);
         isset($_SESSION) ?: session_start();
         // echo '<pre>';
         // print_r($_SERVER);die;
@@ -91,7 +91,7 @@ class Structure
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <!-- CSS -->
-                <link rel="stylesheet" href="src/css/style.css">
+                <link rel="stylesheet" href="theme/css/home.css">
                 <!-- FontAwesome -->
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -182,11 +182,7 @@ class Structure
         public static function errorPage($error)
         {
             // Structure::header("Error - Project");
-            echo ('<main role="main" class="container mt-3">
-            <h1 class="display-4 text">Error</h1>
-            <hr>
-            <div class="alert alert-danger" role="alert">' . _esc($error) . '</div>
-            </main>');
+            echo '<script>alert("'.$error . '")</script>';
             Structure::footer();
         }
 

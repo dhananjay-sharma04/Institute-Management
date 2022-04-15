@@ -59,9 +59,9 @@ elseif(!isset($_SESSION['role'])){
             </ul>
         </li>
         <li>
-            <div class="icon-link" onclick="std_attend()">
+            <div class="icon-link">
                 <i class="uil uil-user-check" ></i>
-                <span class="link-name"><a onclick="std_attend()">Attendence</a></span>
+                <span class="link-name" onclick="std_attend()">Attendence</span>
             </div>
             <ul class="sub-menu blank">
                 <li><span class="link-name" >Attendence</span></li>
