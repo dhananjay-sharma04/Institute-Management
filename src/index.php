@@ -121,10 +121,13 @@ if(isset($_POST['login']))
               <div class="col-lg-6">
                 <div class="w-50 mx-auto card shadow-lg">
                     <div class="card-body">
-                    <div class="border rounded-circle mx-auto d-flex" style="width:100px;height:100px;"><i class="fa fa-user fa-3x m-auto"></i></div>
+                    <div class="border rounded-circle mx-auto d-flex" style="width:100px;height:100px;"><i class="fa fa-user-secret fa-3x m-auto"></i></div>
                         <h3 style="text-align: center">Login</h3>
                         <form action="" method="post">
-                        <div class="form-group">
+                        <div class="form-group input-group">
+                              <span class="input-group-text mb-3" id="basic-addon1">
+                                <i class="fa fa-user-secret" aria-hidden="true"></i>
+                              </span>
                               <select class="form-select mb-3" name="user_type" id="user_type">
                               <?php
                                 foreach($users as $i => $u){
@@ -138,13 +141,19 @@ if(isset($_POST['login']))
                               </select>
                             </div>
                             <!-- Email input -->
-                            <div class="form-outline mb-3">
+                            <div class="form-outline input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">
+                                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                                </span>
                                 <input type="email" id="form2Example1" name="email" class="form-control" />
                                 <label class="form-label" for="form2Example1">Email address</label>
                             </div>
 
                             <!-- Password input -->
-                            <div class="form-outline mb-3">
+                            <div class="form-outline input-group mb-3">
+                                <span class="input-group-text" id="basic-addon1">
+                                  <i class="fa fa-key" aria-hidden="true"></i>
+                                </span>
                                 <input type="password" id="form2Example2" name="password" class="form-control" />
                                 <label class="form-label" for="form2Example2">Password</label>
                             </div>
