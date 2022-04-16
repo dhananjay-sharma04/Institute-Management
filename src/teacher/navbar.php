@@ -18,7 +18,7 @@
             </div>
             <ul class="sub-menu">
                 <li><span class="link-name" href="">Students</span></li>
-                <li onclick="showstudents()">View</li>
+                <li onclick="showstudents_teacher()">View</li>
                 <li onclick="addstudent()">Add</li>
             </ul>
         </li>
@@ -34,7 +34,9 @@
         <li>
             <div class="icon-link">
                 <i class="uil uil-clock"></i>
+                <a href="teacher/send_hw.php">
                 <span class="link-name">Send homework</span>
+                </a>
             </div>
             <ul class="sub-menu blank">
                 <li><span class="link-name" href="">Send homework</span></li>

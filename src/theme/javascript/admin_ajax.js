@@ -73,7 +73,7 @@ function std_attend(stdclass = 0){
             $('#main-content').html(e)
         }
       });
-}
+} 
 function showteacher(e){
     $.ajax({
         type: "POST",
@@ -98,3 +98,15 @@ function showteacher(e){
          }
      });
  }
+ function showstudents_teacher(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'showstudents_teacher'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 

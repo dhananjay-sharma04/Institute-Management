@@ -239,4 +239,17 @@ class Admin extends Config
 
         return $success;
     }
+
+    public function add_homework($class,$date,$location,$uid,$des)
+    {
+        $success = false;
+        if (isset($class) && isset($date) && isset($location) && isset($uid) ) 
+        {
+            $insert=$this->db->query("INSERT INTO `hw_table` (`class`, `description`, `date`, `location`, `id`) VALUES (?,?,?,?,?,);",$class,$des,$date,$location,$uid);
+            if ($insert->affectedRows() > 0) {
+                $success = true;
+            }
+        }
+
+    }
 }

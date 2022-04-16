@@ -83,7 +83,17 @@
               <?php include("add_teacher.php");?>
               <?php
               break;
-            
+              case 'showstudents_teacher':
+                ?>
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-book-reader"></i>
+                    <span class="text">Students</span>
+                </div>
+                <!-- Dashboard Title complete -->
+                <?php include("../teacher/view_students.php"); ?>
+                <?php
+            break;
             default:
                 echo 'unknown request';
             break;

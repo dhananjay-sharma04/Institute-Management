@@ -1,6 +1,6 @@
 <?php
 // Import main class
-require "../classes/teacher.class.php";
+require "../classes/admin.class.php";
 require "../classes/structure.class.php";
 
 // Start session
@@ -10,45 +10,51 @@ Session::init();
 // Structure::checkLogin();
 
 // Load Header
-// Structure::header("Home - Teacher Panel");
+// Structure::header("View Students - Admin");
 
 // Main Content Goes Here
-$teacher    = new Teacher();
-$students = $teacher->view_students();
-
-echo('<main role="main" class="container mx-auto mt-3">');
-Structure::topHeading("My Students");
+$admin    = new Admin();
+$students = $admin->view_student(0, false);
+Structure::topHeading("MY students");
 echo('<hr>
-        <table class="table table-striped">
-        <caption><a href="'.Structure::nakedURL("").'" style="text-decoration: none;">Go back!</a></caption>
-        <thead class="bg-info text-white">
+        <table class="table table-striped table-hover text-secondary">
+       
+        <thead class="bg-dark text-white">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Student\'s Name</th>
-            <th scope="col">Subjects</th>
+            <th scope="col">Name</th>&nbsp
+            <th scope="col">Class</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone Number</th>
           </tr>
         </thead>
         <tbody>');
-
+ 
 $counter = 0;
+// print_r($students);
 foreach ($students as $student) {
     $counter++;
-    if ($student["subjects"] == "") {
-        $student["subjects"] = "<span class='text-danger'>None</span>";
-    }
+    // if ($student["subjects"] == "") {
+    //     $student["subjects"] = "<span class='text-danger'>None</span>";
+    // }
+    // if ($student['teacher_name'] == "") {
+    //     $student['teacher_name'] = "<span class='text-danger'>None</span>";
+    // }
 
     echo('<tr>
-        <th scope="row">'._esc($counter).'</th>
-        <td>'._esc($student["student_name"]).'</td>
-        <td>'._esc($student["subjects"]).'</td>
+        <td scope="row">'.$counter.'</td>
+        <td>'.$student["name"].'</td>&nbsp
+        <td>'.$student["class"].'</td>
+        <td>'.$student["email"].'</td>
+        <td>'.$student["phone_number"].'</td>
       </tr>');
 }
-echo "</tbody></table></main>";
+echo('</tbody></table></main>');
 
-$teacher->close_DB();
+$admin->close_DB();
 
 // Display Footer
 Structure::footer();
 
 // delete object
-unset($teacher);
+unset($admin);

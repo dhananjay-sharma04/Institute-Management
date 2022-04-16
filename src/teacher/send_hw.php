@@ -1,16 +1,46 @@
 <?php
 require "../classes/admin.class.php";
 require "../classes/structure.class.php";
-$admin    = new Admin();
-$students = $admin->view_student(0, false, $_POST['std']);
-print_r($_POST);
+
+Session::init();
+Structure::header("send homework");
+// Structure::topHeading("");
+print_r($_SESSION);
+
+if(isset($_POST['submit']))
+{
+    // echo'<pre>';
+    // print_r($_POST['class']);
+    // print_r($_FILES['hw_file']);
+    $file_name=$_FILES['hw_file']['name'];
+    $type=$_FILES['hw_file']['type'];
+    echo $tmp_name=$_FILES['hw_file']['tmp_name'];
+    $error=$_FILES['hw_file']['error'];
+    $file_size=$_FILES['hw_file']['size'];
+    move_uploaded_file($tmp_name,'../file/'.$file_name);
+    $class=$_POST['class'];
+    $date = date('Y-m-d',time());
+    $uid=$_SESSION['uid'];
+    $des=$_POST['hw_disc'];
+    $admin    = new Admin();
+    $homework= $admin->add_homework($class,$date,$location,$uid,$des);
+    if($homework === true)
+    {
+        echo"<script>
+            alert('homeork send!');
+          </script>";
+    }
+    else {
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="http://localhost/ims/src/">
+    <meta http-equiv="X-UA-Compatible" content="IE=edige">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
@@ -22,8 +52,8 @@ print_r($_POST);
 </head>
 
 <body>
-    <form action="" method="post">
-        <label for="homework title">homework title</label>
+    <form action="" method="post" enctype="multipart/form-data">
+        <label for="homework title">home work title</label>
         <input type="text" name="hw_title"  id="hw_title" required>
         </div>
         <div class="form-group">
@@ -38,11 +68,11 @@ print_r($_POST);
             </div>
         </div>
         <label for="discip_of_hw">discription of homework</label>
-        <input type="text" name="hw_disp" id="hw_dis">
+        <input type="text" name="hw_disc" id="hw_dis">
         <div class="custom-file">
-            <input type="file" class="custom-file-input" id="validatedCustomFile">
+            <input type="file" name="hw_file" class="custom-file-input" id="validatedCustomFile">
         </div>
-        <button type="submit">submit</button>
+        <button type="submit" name="submit">submit</button>
     </form>
 </body>
 

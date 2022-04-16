@@ -51,8 +51,8 @@ foreach ($students as $student) {
         <td>
         <div class="container">
             <div class="row">
-              <div class="col"><a href="admin/update_student.php?student_id='.$student["uid"].'" alt="Edit"><img src="src/icons/edit-24px.svg" alt="Edit"></a></div>
-              <div class="col"><a href="admin/delete_student.php?student_id='.$student["uid"].'"  alt="Delete"><img src="src/icons/delete-24px.svg" alt="Delete"></a></div>
+              <div class="col"><a href="admin/update_student.php?student_id='.$student["uid"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
+              <div class="col"><a href="admin/delete_student.php?student_id='.$student["uid"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
             </div>
           </div>
         </td>
