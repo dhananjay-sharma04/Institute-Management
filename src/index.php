@@ -71,12 +71,7 @@ if(isset($_POST['login']))
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Navbar brand -->
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
-        <img
-          src="./assets/Image/InfinityEducation.jpg"
-          height="25"
-          alt="InfinityEducation"
-          loading="lazy"
-        />Infinity Education
+      <i class="fa-solid fa-infinity"></i>
       </a>
       <!-- Left links
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -119,7 +114,7 @@ if(isset($_POST['login']))
     <div class="container-fluid my-auto">
         <div class="row">
             <div class="col-lg-6">
-                <h1 class="display-4 font-weight-bold">About Infinity Education</h1>
+                <h1 class="display-4 font-weight-bold">About Infinity</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum beatae cumque provident sit voluptate voluptas harum quos aliquam impedit officiis molestias unde ipsam magnam distinctio nemo nulla sed, eius accusantium.</p>
                 <a href="#" class="btn btn-lg btn-primary">Contact Us</a>
             </div>

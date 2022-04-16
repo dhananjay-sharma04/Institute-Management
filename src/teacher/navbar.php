@@ -33,9 +33,9 @@
         </li>
         <li>
             <div class="icon-link">
-                <i class="uil uil-clock"></i>
+                <i class="uil uil-pen"></i>
                 <a href="teacher/send_hw.php">
-                <span class="link-name">Send homework</span>
+                <span class="link-name">Homework</span>
                 </a>
             </div>
             <ul class="sub-menu blank">
