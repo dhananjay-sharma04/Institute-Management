@@ -125,7 +125,7 @@ if(isset($_POST['login']))
                         <h3 style="text-align: center">Login</h3>
                         <form action="" method="post">
                         <div class="form-group">
-                              <select class="form-control" name="user_type" id="user_type" style="height: calc(2.5rem + 2px);">
+                              <select class="form-select mb-3" name="user_type" id="user_type">
                               <?php
                                 foreach($users as $i => $u){
                                   if(isset($_GET['show']) && $u == $_GET['show']){
@@ -138,13 +138,13 @@ if(isset($_POST['login']))
                               </select>
                             </div>
                             <!-- Email input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <input type="email" id="form2Example1" name="email" class="form-control" />
                                 <label class="form-label" for="form2Example1">Email address</label>
                             </div>
 
                             <!-- Password input -->
-                            <div class="form-outline mb-4">
+                            <div class="form-outline mb-3">
                                 <input type="password" id="form2Example2" name="password" class="form-control" />
                                 <label class="form-label" for="form2Example2">Password</label>
                             </div>
