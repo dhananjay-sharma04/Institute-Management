@@ -58,6 +58,7 @@ class Structure
 
     public static function header($title)
     {
+        define('DIRROOT',__DIR__.'/../');
         error_reporting(7);
         isset($_SESSION) ?: session_start();
         // echo '<pre>';

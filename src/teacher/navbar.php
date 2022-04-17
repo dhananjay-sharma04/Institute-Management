@@ -22,7 +22,7 @@
                 <li onclick="addstudent()">Add</li>
             </ul>
         </li>
-        <li>
+        <li> 
             <div class="icon-link">
                 <i class="uil uil-clock"></i>
                 <span class="link-name">Time Table</span>
@@ -31,12 +31,10 @@
                 <li><span class="link-name" href="">Time Table</span></li>
             </ul>
         </li>
-        <li>
+        <li onclick="send_hw()">
             <div class="icon-link">
-                <i class="uil uil-pen"></i>
-                <a href="teacher/send_hw.php">
-                <span class="link-name">Homework</span>
-                </a>
+                <i class="uil uil-pen" ></i>
+                <span class="link-name">Send Homework</span>
             </div>
             <ul class="sub-menu blank">
                 <li><span class="link-name" href="">Send homework</span></li>

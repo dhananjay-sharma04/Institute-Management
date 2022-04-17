@@ -20,7 +20,7 @@ elseif($_SESSION['role']=='student')
     header('Location: /ims/src/student/index.php');
 }
 // Main Content Goes Here
-// Structure::topHeading("Teacher Panel");
+// Structure::topHeading("Teacher Panel"); 
 ?>
 <?php include("navbar.php"); ?>
 <!-- Dashboard Section -->

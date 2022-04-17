@@ -245,12 +245,12 @@ class Admin extends Config
         $success = false;
         if (isset($class) && isset($date) && isset($location) && isset($uid) ) 
         {
-            $insert=$this->db->query("INSERT INTO `hw_table` (`class`, `description`, `date`, `location`, `id`) VALUES (?,?,?,?,?,);",$class,$des,$date,$location,$uid);
+            $insert=$this->db->query("INSERT INTO `hw_table` (`class`, `description`, `date`, `location`, `id`) VALUES (?,?,?,?,?)",$class,$des,$date,$location,$uid);
             if ($insert->affectedRows() > 0) {
                 $success = true;
             }
         }
-
+        return $success;
     }
     public function view_inquiry()
     {

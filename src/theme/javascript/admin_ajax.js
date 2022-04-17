@@ -121,4 +121,16 @@ function showteacher(e){
             $('#main-content').html(e)
         }
       });
+ }
+ function send_hw(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'send_hw'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
 } 

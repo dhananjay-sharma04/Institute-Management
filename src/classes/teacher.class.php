@@ -156,6 +156,22 @@ class Teacher extends Config
 
         return false;
     }
+    public function view_homework($id)
+    {
+        $success=false;
+        if(isset($id))
+        {
+            print_r($id);
+            $view = $this->db->query("SELECT * FROM `hw_table` where id=?",$id);
+            return $view->fetchAll();
+            
+        }
+        return $success;
+    }
+    public function delete_homework()
+    {
+        
+    }
 
     // Other DB functions
     public function close_DB()

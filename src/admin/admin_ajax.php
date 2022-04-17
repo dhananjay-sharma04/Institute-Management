@@ -99,6 +99,11 @@
             <?php include("view_inquiry.php");?>2
             <?php
                 break;
+            case 'send_hw':
+            ?>
+            <?php include("../teacher/send_hw.php");?>2
+            <?php
+                break;
 
             default:
                 echo 'unknown request';
