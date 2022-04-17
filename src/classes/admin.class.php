@@ -256,6 +256,36 @@ class Admin extends Config
     {
         $insert=$this->db->query("SELECT * FROM `inquiry_table`");
         
-        print_r($insert);
+        return $insert->fetchAll();
+        // print_r($insert);
+    }
+    public function view_homework($id)
+    {
+        $success=false;
+        if(isset($id))
+        {
+            // print_r($id);
+            $view = $this->db->query("SELECT * FROM `hw_table` where id=?",$id);
+            return $view->fetchAll();
+            
+        }
+        return $success;
+    } 
+
+    public function delete_inquiry($id)
+    {
+        $success = false; // variable to return if insertion success or failed
+
+        // check if items to insert exists in the input array or note
+        if (isset($id)) {
+            $insert = $this->db->query("DELETE FROM `inquiry_table` WHERE `ig_id`=?", $id);
+
+            // if more than 1 row returned then it insertion was successfull
+            if ($insert->affectedRows() > 0) {
+                $success = true;
+            }
+        }
+
+        return $success;
     }
 }

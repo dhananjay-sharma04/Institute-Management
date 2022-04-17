@@ -12,6 +12,25 @@ if (isset($_SESSION['role'])) {
     header('Location: /ims/src/student/index.php');
   }
 }
+if(isset($_POST['submit']))
+{
+    $name= addslashes($_POST['name']); 
+    $gender=$_POST['options'];
+    $schoo_name=addslashes($_POST['schl_name']); 
+    $class=$_POST['class']; 
+    $p_num=$_POST['ph_no']; 
+    $email=$_POST['email']; 
+    $dob=$_POST['dob']; 
+    $date = date('Y-m-d',time());
+    // print_r($con);
+    $q="INSERT INTO inquiry_table (`name`, `school_name`, `class`, `p_number`, `email`, `dob`, `inq_date`,gender) VALUES ('$name', '$schoo_name', $class, $p_num, '$email', $dob, $date,'$gender')";
+    $insert = mysqli_query($con,$q);
+    if(false != $insert){
+      echo 'yess';
+    }else{
+      print_r($con);
+    }
+}
 ?>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -61,7 +80,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" id="form12" class="form-control" required />
+                <input type="text" name="name" id="form12" class="form-control" required/>
                 <label class="form-label" for="form12">Your Name</label>
               </div>
               <!-- Date of Birth selector -->
@@ -69,17 +88,16 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                 </span>
-                <input type="date" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required />
-                <label class="form-label" for="form12">Date of Birth</label>
+                <input type="date" name="dob" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required/>                <label class="form-label" for="form12">Date of Birth</label>
               </div>
               <!-- Gender selector -->
               <div class="btn-group input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Gender
                 </span>
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" required />
+                <input type="radio" class="btn-check" value="male" name="options" id="option1" autocomplete="off" required/>                
                 <label class="btn btn-info" for="option1">Male</label>
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" required />
+                <input type="radio" class="btn-check" value="female" name="options" id="option2" autocomplete="off" required/>                
                 <label class="btn btn-info" for="option2">Female</label>
               </div>
               <!-- Standard selector -->
@@ -87,7 +105,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text mb-3" id="basic-addon1">
                   <i class="fa fa-desktop" aria-hidden="true"></i>
                 </span>
-                <select class="form-select mb-3" id="std" required>
+                <select class="form-select mb-3" name="class" id="std"required>                 
                   <option value="" disabled selected>choose your class </option>
                   <option value="10">10</option>
                   <option value="9">9</option>
@@ -99,16 +117,15 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-building" aria-hidden="true"></i>
                 </span>
-                <input type="text" id="form12" class="form-control" required />
-                <label class="form-label" for="form12">School Name</label>
+                <input type="text" id="form12" name="schl_name" class="form-control" required/>
+                 <label class="form-label" for="form12">School Name</label>
               </div>
               <!-- Phone Number input -->
               <div class="form-outline input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-address-book" aria-hidden="true"></i>
                 </span>
-                <input type="number" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required />
-                <label class="form-label" for="form12">Phone number</label>
+              <input type="number" name="ph_no" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>                <label class="form-label" for="form12">Phone number</label>
               </div>
               <!-- Email input -->
               <div class="form-outline input-group mb-3">

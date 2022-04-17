@@ -4,7 +4,8 @@ require "../classes/admin.class.php";
 require "../classes/structure.class.php";
 
 // Start session
-Session::init();
+// Session::init();
+session_start();
 
 // Check if logged in otherwise redirect to login page
 // Structure::checkLogin();
@@ -14,7 +15,7 @@ Session::init();
 
 // Main Content Goes Here
 $admin    = new Admin();
-$student = $admin->view_inquiry();
+$inqs = $admin->view_inquiry();
 Structure::topHeading("INQUIRIES");
 echo('<hr>
         <table class="table table-striped table-hover text-secondary">
@@ -29,13 +30,14 @@ echo('<hr>
             <th scope="col">Email</th>
             <th scope="col">date of birth</th>
             <th scope="col">students date</th>
+            <th scope="col">gender</th>
           </tr>
         </thead>
         <tbody>');
 
 $counter = 0;
 // print_r($students);
-foreach ($students as $student) {
+foreach ($inqs as $inq) {
     $counter++;
     // if ($student["subjects"] == "") {
     //     $student["subjects"] = "<span class='text-danger'>None</span>";
@@ -46,19 +48,19 @@ foreach ($students as $student) {
 
     echo('<tr>
         <td scope="row">'.$counter.'</td>
-        <td>'.$students["name"].'</td>&nbsp
-        <td>'.$students["school_name"].'</td>
-        <td>'.$students["class"].'</td>
-        <td>'.$students["p_number"].'</td>
-        <td>'.$students["email"].'</td>
-        <td>'.$students["dob"].'</td>
-        <td>'.$students["inq_date"].'</td>
+        <td>'.$inq["name"].'</td>&nbsp
+        <td>'.$inq["school_name"].'</td>
+        <td>'.$inq["class"].'</td>
+        <td>'.$inq["p_number"].'</td>
+        <td>'.$inq["email"].'</td>
+        <td>'.$inq["dob"].'</td>
+        <td>'.$inq["inq_date"].'</td>
+        <td>'.$inq["gender"].'</td>
 
         <td>
         <div class="container">
             <div class="row">
               <div class="col"><a href="admin/update_student.php?student_id='.$student["ig_id"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
-              <div class="col"><a href="admin/delete_student.php?student_id='.$student["ig_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
             </div>
           </div>
         </td>

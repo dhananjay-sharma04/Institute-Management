@@ -2,8 +2,9 @@
 require "../classes/teacher.class.php";
 session_start();
 $id =$_SESSION['uid'];
+$role =$_SESSION['role'];
 $teacher = new Teacher();
-$homeworks= $teacher->view_homework($id);
+$homeworks= $teacher->view_homework($id,$role);
 // print_r($id);
 // print_r($homeworks);
 if($homeworks==true)
