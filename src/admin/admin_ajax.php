@@ -93,7 +93,13 @@
                 <!-- Dashboard Title complete -->
                 <?php include("../teacher/view_students.php"); ?>
                 <?php
-            break;
+               break;
+            case 'show_inquiry':
+            ?>
+            <?php include("view_inquiry.php");?>2
+            <?php
+                break;
+
             default:
                 echo 'unknown request';
             break;

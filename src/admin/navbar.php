@@ -67,6 +67,15 @@ elseif(!isset($_SESSION['role'])){
                 <li><span class="link-name" >Attendence</span></li>
             </ul>
         </li>
+        <li>
+            <div class="icon-link">
+                <i class="uil uil-clock"></i>
+                <span class="link-name" onclick="show_inquiry()">Inquiry</span>
+            </div>
+            <ul class="sub-menu blank">
+                <li><span class="link-name"><b>Inquiry</b></span></li>
+            </ul>
+        </li>
     </ul>
     <!-- Navigation Menu List complete-->
     <!-- Mode Menu -->

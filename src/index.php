@@ -72,9 +72,25 @@ if (isset($_POST['login'])) {
     </div>
     <!-- Collapsible wrapper -->
     <!-- Right elements -->
+<<<<<<< Updated upstream
     <!-- Avatar -->
     <div class="dropdown">
       <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+=======
+      <!-- Avatar -->
+      <a href="page/inquiry.php" class="nav-link">
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i>inquiry
+      </a>
+        <div class="dropdown">
+        <a
+          class="dropdown-toggle d-flex align-items-center hidden-arrow"
+          href="#"
+          id="navbarDropdownMenuAvatar"
+          role="button"
+          data-mdb-toggle="dropdown"
+          aria-expanded="false"
+          >
+>>>>>>> Stashed changes
         <a href="page/signin.php" class="nav-link">
           <i class="fa fa-user-secret" aria-hidden="true"></i>Login
         </a>

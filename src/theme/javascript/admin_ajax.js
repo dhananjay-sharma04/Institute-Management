@@ -110,3 +110,15 @@ function showteacher(e){
         }
       });
 } 
+ function show_inquiry(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'show_inquiry'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 

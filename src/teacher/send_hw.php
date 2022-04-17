@@ -27,7 +27,7 @@ if(isset($_POST['submit']))
     if($homework === true)
     {
         echo"<script>
-            alert('homeork send!');
+           alert('homeork send!');
           </script>";
     }
     else {

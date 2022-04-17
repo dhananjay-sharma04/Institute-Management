@@ -252,4 +252,10 @@ class Admin extends Config
         }
 
     }
+    public function view_inquiry()
+    {
+        $insert=$this->db->query("SELECT * FROM `inquiry_table`");
+        
+        print_r($insert);
+    }
 }
