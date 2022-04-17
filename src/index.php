@@ -44,11 +44,6 @@ if (isset($_SESSION['role'])) {
     </div>
     <!-- Collapsible wrapper -->
     <!-- Right elements -->
-          id="navbarDropdownMenuAvatar"
-          role="button"
-          data-mdb-toggle="dropdown"
-          aria-expanded="false"
-          >
     <!-- Avatar -->
     <div class="dropdown">
       <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
