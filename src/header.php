@@ -14,6 +14,9 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.11.0/mdb.min.css" rel="stylesheet" />
   <style>
     footer {
+      position: fixed;
+      width: 100%;
+      bottom: 0;
       background-color: #333;
       overflow: hidden;
     }
@@ -24,6 +27,11 @@
       text-align: center;
       float: left;
       color: white;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
   </style>
 </head>

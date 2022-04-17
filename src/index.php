@@ -12,34 +12,6 @@ if (isset($_SESSION['role'])) {
     header('Location: /ims/src/student/index.php');
   }
 }
-// echo '<pre>';
-// die;
-// print_r($_SESSION['uid']);
-
-// die;
-// Import main class
-$users = ['admin', 'student', 'teacher'];
-$eror = '';
-if (isset($_POST['login'])) {
-  if (in_array($_POST['user_type'], $users)) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $sql = "SELECT * FROM `user` WHERE email like '$email' && password like '$password' && role like'{$_POST['user_type']}'";
-    if (false !== $result = mysqli_query($con, $sql)) {
-      $data = mysqli_fetch_assoc($result);
-      if ($data !== null) {
-        $_SESSION['uid'] = $data['uid'];
-        $_SESSION['role'] = $_POST['user_type'];
-        $_SESSION['name'] = $data['name'];
-        header('Location: /ims/src/index.php');
-      } else {
-        $eror = 'Invalid credential';
-      }
-    } else {
-      $eror = 'Invalid credential';
-    }
-  }
-}
 ?>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -72,19 +44,14 @@ if (isset($_POST['login'])) {
     </div>
     <!-- Collapsible wrapper -->
     <!-- Right elements -->
-      <!-- Avatar -->
-      <a href="page/inquiry.php" class="nav-link">
-        <i class="fa-solid fa-envelope" aria-hidden="true"></i>inquiry
-      </a>
-        <div class="dropdown">
-        <a
-          class="dropdown-toggle d-flex align-items-center hidden-arrow"
-          href="#"
           id="navbarDropdownMenuAvatar"
           role="button"
           data-mdb-toggle="dropdown"
           aria-expanded="false"
           >
+    <!-- Avatar -->
+    <div class="dropdown">
+      <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
         <a href="page/signin.php" class="nav-link">
           <i class="fa fa-user-secret" aria-hidden="true"></i>Login
         </a>
@@ -94,7 +61,6 @@ if (isset($_POST['login'])) {
   </div>
   <!-- Container wrapper -->
 </nav>
-
 <!-- content -->
 <div class="d-flex shadow" style="height:500px;background:linear-gradient(-45deg, #67dcda 50%, transparent 50%)">
   <div class="container-fluid my-auto">
@@ -107,61 +73,75 @@ if (isset($_POST['login'])) {
       <div class="col-lg-6">
         <div class="w-50 mx-auto card shadow-lg">
           <div class="card-body">
-            <div class="border rounded-circle mx-auto d-flex" style="width:100px;height:100px;">
-              <i class="fa fa-user-secret fa-3x m-auto"></i>
+            <div class="border rounded-circle mx-auto d-flex" style="width:50px;height: 50px;">
+              <i class="fa fa-user-secret fa-2x m-auto"></i>
             </div>
-            <h3 style="text-align: center">Login</h3>
+            <h3 style="text-align: center">Admission Inquiry</h3>
             <form action="" method="post">
+              <!-- Name input -->
+              <div class="form-outline input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="form12" class="form-control" required/>
+                <label class="form-label" for="form12">Your Name</label>
+              </div>
+              <!-- Date of Birth selector -->
+              <div class="form-outline input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-calendar" aria-hidden="true"></i>
+                </span>
+                <input type="date" id="form12" class="form-control" required/>
+                <label class="form-label" for="form12">Date of Birth</label>
+              </div>
+              <!-- Gender selector -->
+              <div class="btn-group input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Gender
+                </span>
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" required/>
+                <label class="btn btn-primary" for="option1">Male</label>
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" required/>
+                <label class="btn btn-primary" for="option2">Female</label>
+              </div>
+              <!-- Standard selector -->
               <div class="form-group input-group">
                 <span class="input-group-text mb-3" id="basic-addon1">
-                  <i class="fa fa-user-secret" aria-hidden="true"></i>
+                  <i class="fa fa-desktop" aria-hidden="true"></i>
                 </span>
-                <select class="form-select mb-3" name="user_type" id="user_type">
-                  <?php
-                  foreach ($users as $i => $u) {
-                    if (isset($_GET['show']) && $u == $_GET['show']) {
-                      echo "<option value=\"$u\" selected>$u</option></a>";
-                    } else {
-                      echo "<option value=\"$u\">$u</option></a>";
-                    }
-                  }
-                  ?>
+                <select class="form-select mb-3" id="std"required>
+                  <option value="" disabled selected>choose your class </option>
+                  <option value="10">10</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
                 </select>
+              </div>
+              <!-- School Name input -->
+              <div class="form-outline input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-building" aria-hidden="true"></i>
+                </span>
+                <input type="text" id="form12" class="form-control" required/>
+                <label class="form-label" for="form12">School Name</label>
+              </div>
+              <!-- Phone Number input -->
+              <div class="form-outline input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">
+                  <i class="fa fa-address-book" aria-hidden="true"></i>
+                </span>
+                <input type="number" id="form12" class="form-control" required/>
+                <label class="form-label" for="form12">Phone number</label>
               </div>
               <!-- Email input -->
               <div class="form-outline input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
                 </span>
-                <input type="email" id="form2Example1" name="email" class="form-control" />
+                <input type="email" id="form2Example1" name="email" class="form-control" required/>
                 <label class="form-label" for="form2Example1">Email address</label>
               </div>
-
-              <!-- Password input -->
-              <div class="form-outline input-group mb-3">
-                <span class="input-group-text" id="basic-addon1">
-                  <i class="fa fa-key" aria-hidden="true"></i>
-                </span>
-                <input type="password" id="form2Example2" name="password" class="form-control" />
-                <label class="form-label" for="form2Example2">Password</label>
-              </div>
-
-              <!-- 2 column grid layout for inline styling -->
-              <div class="row mb-4">
-                <div class="col d-flex justify-content-center">
-                  <!-- Checkbox -->
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="form2Example34" />
-                    <label class="form-check-label" for="form2Example34">Remember Me</label>
-                  </div>
-                </div>
-                <div class="col">
-                  <!-- Simple link -->
-                  <a href="#!">Forgot password?</a>
-                </div>
-              </div>
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4" name="login">Login</button>
+              <button type="submit" class="btn btn-primary btn-block mb-4" name="login">Submit Inquiry</button>
             </form>
           </div>
         </div>
