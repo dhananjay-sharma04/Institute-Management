@@ -74,7 +74,7 @@ if(isset($_POST['submit']))
               <i class="fa fa-user-secret fa-2x m-auto"></i>
             </div>
             <h3 style="text-align: center">Admission Inquiry</h3>
-            <form action="admin/Inquiry_students.php" method="post">
+            <form action="index.php" method="post">
               <!-- Name input -->
               <div class="form-outline input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">

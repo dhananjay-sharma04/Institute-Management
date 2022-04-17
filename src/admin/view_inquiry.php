@@ -60,8 +60,7 @@ foreach ($inqs as $inq) {
         <td>
         <div class="container">
             <div class="row">
-              <div class="col"><a href="admin/update_student.php?student_id='.$student["ig_id"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
-            </div>
+            <div class="col"><a href="admin/delete_inquiry.php?inq_id='.$inq["ig_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>            </div>
           </div>
         </td>
       </tr>');
