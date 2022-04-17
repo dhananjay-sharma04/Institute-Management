@@ -25,9 +25,11 @@ if(isset($_POST['submit']))
     // print_r($con);
     $q="INSERT INTO inquiry_table (`name`, `school_name`, `class`, `p_number`, `email`, `dob`, `inq_date`,gender) VALUES ('$name', '$schoo_name', $class, $p_num, '$email', $dob, $date,'$gender')";
     $insert = mysqli_query($con,$q);
-    if(false != $insert){
-      echo 'yess';
-    }else{
+    if(false != $insert){ ?>
+      <script>
+        alert('Inquiry submitted');
+      </script>
+    <?php } else{
       print_r($con);
     }
 }
@@ -125,7 +127,8 @@ if(isset($_POST['submit']))
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-address-book" aria-hidden="true"></i>
                 </span>
-              <input type="number" name="ph_no" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>                <label class="form-label" for="form12">Phone number</label>
+              <input type="number" name="ph_no" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>                
+               <label class="form-label" for="form12">Phone number</label>
               </div>
               <!-- Email input -->
               <div class="form-outline input-group mb-3">

@@ -276,7 +276,6 @@ nav.close div li.mode div:first-child{
 body.dark .switch:before{
     left: 20px;
 }
-
 .dashboard{
     position: relative;
     left: 250px;
@@ -285,6 +284,9 @@ body.dark .switch:before{
     width: calc(100% - 250px);
     padding: 10px 14px;
     transition: var(--tran-05);
+}
+body.dark .dashboard{
+    color: var(--text-color);
 }
 nav.close ~ .dashboard{
     left: 73px;
