@@ -10,7 +10,7 @@ Session::init();
 // Structure::checkLogin();
 
 // Load Header
-Structure::header("View Teachers - Student Panel");
+Structure::header("Student Panel");
 // if($_SESSION['role']=='teacher')
 // {
 //     header('Location: /ims/src/teacher/index.php');

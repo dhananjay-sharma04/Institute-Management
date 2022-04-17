@@ -28,29 +28,12 @@ if (isset($_SESSION['role'])) {
       <a class="navbar-brand mt-2 mt-lg-0" href="#">
         <i class="fa-solid fa-infinity"></i>&nbsp;Infinity
       </a>
-      <!-- Left links
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item ">
-          <a class="nav-link" href="#">Dashboard</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Projects</a>
-        </li>
-      </ul>
-      Left links -->
     </div>
     <!-- Collapsible wrapper -->
     <!-- Right elements -->
-    <!-- Avatar -->
-    <div class="dropdown">
-      <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-        <a href="page/signin.php" class="nav-link">
-          <i class="fa fa-user-secret" aria-hidden="true"></i>Login
-        </a>
-    </div>
+    <a href="page/signin.php" class="nav-link">
+      <i class="fa fa-user-secret" aria-hidden="true"></i>Login
+    </a>
   </div>
   <!-- Right elements -->
   </div>
@@ -72,13 +55,13 @@ if (isset($_SESSION['role'])) {
               <i class="fa fa-user-secret fa-2x m-auto"></i>
             </div>
             <h3 style="text-align: center">Admission Inquiry</h3>
-            <form action="" method="post">
+            <form action="admin/Inquiry_students.php" method="post">
               <!-- Name input -->
               <div class="form-outline input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-user" aria-hidden="true"></i>
                 </span>
-                <input type="text" id="form12" class="form-control" required/>
+                <input type="text" id="form12" class="form-control" required />
                 <label class="form-label" for="form12">Your Name</label>
               </div>
               <!-- Date of Birth selector -->
@@ -86,7 +69,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                 </span>
-                <input type="date" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required/>
+                <input type="date" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required />
                 <label class="form-label" for="form12">Date of Birth</label>
               </div>
               <!-- Gender selector -->
@@ -94,9 +77,9 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Gender
                 </span>
-                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" required/>
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" required />
                 <label class="btn btn-info" for="option1">Male</label>
-                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" required/>
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" required />
                 <label class="btn btn-info" for="option2">Female</label>
               </div>
               <!-- Standard selector -->
@@ -104,7 +87,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text mb-3" id="basic-addon1">
                   <i class="fa fa-desktop" aria-hidden="true"></i>
                 </span>
-                <select class="form-select mb-3" id="std"required>
+                <select class="form-select mb-3" id="std" required>
                   <option value="" disabled selected>choose your class </option>
                   <option value="10">10</option>
                   <option value="9">9</option>
@@ -116,7 +99,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-building" aria-hidden="true"></i>
                 </span>
-                <input type="text" id="form12" class="form-control" required/>
+                <input type="text" id="form12" class="form-control" required />
                 <label class="form-label" for="form12">School Name</label>
               </div>
               <!-- Phone Number input -->
@@ -124,7 +107,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-address-book" aria-hidden="true"></i>
                 </span>
-                <input type="number" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>
+                <input type="number" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required />
                 <label class="form-label" for="form12">Phone number</label>
               </div>
               <!-- Email input -->
@@ -132,11 +115,11 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-envelope" aria-hidden="true"></i>
                 </span>
-                <input type="email" id="form2Example1" name="email" class="form-control" required/>
+                <input type="email" id="form2Example1" name="email" class="form-control" required />
                 <label class="form-label" for="form2Example1">Email address</label>
               </div>
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4" name="login">Submit Inquiry</button>
+              <button type="submit" class="btn btn-primary btn-block mb-4" name="submit">Submit Inquiry</button>
             </form>
           </div>
         </div>
@@ -145,13 +128,9 @@ if (isset($_SESSION['role'])) {
   </div>
 </div>
 </div>
-
 <!-- Footer -->
 <footer>
-  <a href="#">Home</a>
-  <a href="#">FAQ</a>
-  <a href="#">Privacy Policy</a>
-  <a href="#">&copy; 2022 | Infinity Education</a>
+  <a href="#">&copy; 2022 | Infinity</a>
 </footer>
 
 <?php include('footer.php'); ?>

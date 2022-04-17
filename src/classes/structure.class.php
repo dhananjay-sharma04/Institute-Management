@@ -97,7 +97,7 @@ class Structure
                 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
                 <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
                 <!-- FontAwesome -->
-                <title>Admin</title>
+                <title><?= $title ?></title>
             </head>
 
             <body>

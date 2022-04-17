@@ -36,7 +36,7 @@
                 <!-- Dashboard Title -->
                 <div class="title">
                     <i class="uil uil-book-reader"></i>
-                    <span class="text">Students</span>
+                    <span class="text">View Students</span>
                 </div>
                 <!-- Dashboard Title complete -->
                 <?php include("view_students.php"); ?>
@@ -44,17 +44,18 @@
             break;
             case 'addStudent':
                 ?>
-                <!-- Dashboard Title -->
-                <div class="title">
-                    <i class="uil uil-book-reader"></i>
-                    <span class="text">Students</span>
-                </div>
-                <!-- Dashboard Title complete -->
+                
                 <?php include("add_student.php"); ?>
                 <?php
             break;
             case 'addstudent';
               ?>
+              <!-- Dashboard Title -->
+              <div class="title">
+                    <i class="uil uil-book-reader"></i>
+                    <span class="text">Add Students</span>
+                </div>
+                <!-- Dashboard Title complete -->
               <?php include("add_student.php");?>
               <?php
               break;
