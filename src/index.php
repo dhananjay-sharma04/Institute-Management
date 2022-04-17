@@ -86,7 +86,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                 </span>
-                <input type="date" id="form12" class="form-control" required/>
+                <input type="date" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required/>
                 <label class="form-label" for="form12">Date of Birth</label>
               </div>
               <!-- Gender selector -->
@@ -95,9 +95,9 @@ if (isset($_SESSION['role'])) {
                   <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Gender
                 </span>
                 <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" required/>
-                <label class="btn btn-primary" for="option1">Male</label>
+                <label class="btn btn-info" for="option1">Male</label>
                 <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" required/>
-                <label class="btn btn-primary" for="option2">Female</label>
+                <label class="btn btn-info" for="option2">Female</label>
               </div>
               <!-- Standard selector -->
               <div class="form-group input-group">
@@ -124,7 +124,7 @@ if (isset($_SESSION['role'])) {
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-address-book" aria-hidden="true"></i>
                 </span>
-                <input type="number" id="form12" class="form-control" required/>
+                <input type="number" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>
                 <label class="form-label" for="form12">Phone number</label>
               </div>
               <!-- Email input -->
