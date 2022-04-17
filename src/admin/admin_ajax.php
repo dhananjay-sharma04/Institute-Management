@@ -1,7 +1,6 @@
 <?php
 
     if(isset($_POST['request'])){
-
         switch($_POST['request']){
             case 'home':
                 ?>
@@ -30,7 +29,7 @@
                         </div>
                     </div>
                 <?php 
-            break;
+             break;
             case 'showstudents':
                 ?>
                 <!-- Dashboard Title -->
@@ -41,13 +40,7 @@
                 <!-- Dashboard Title complete -->
                 <?php include("view_students.php"); ?>
                 <?php
-            break;
-            case 'addStudent':
-                ?>
-                
-                <?php include("add_student.php"); ?>
-                <?php
-            break;
+             break;
             case 'addstudent';
               ?>
               <!-- Dashboard Title -->
@@ -59,66 +52,74 @@
               <?php include("add_student.php");?>
               <?php
               break;
-            case 'updatestudent';
-              ?>
-              <?php include("update_student.php");?>
-              <?php
-              break;
-            case 'deletestudent';
-              ?>
-              <?php include("delete_student.php");?>
-              <?php
-              break;
             case 'std_attend';
               ?>
+              <!-- Dashboard Title -->
+              <div class="title">
+                    <i class="uil uil-user-check" ></i>
+                    <span class="text">Attendence</span>
+                </div>
+                <!-- Dashboard Title complete -->
               <?php include("std_attendence.php");?>
               <?php
               break;
             case 'view_teacher';
               ?>
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="text">View Teachers</span>
+                </div>
+                <!-- Dashboard Title complete -->
               <?php include("view_teachers.php");?>
               <?php
               break;
             case 'add_teacher';
               ?>
+              <!-- Dashboard Title -->
+              <div class="title">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="text">Add Teachers</span>
+                </div>
+                <!-- Dashboard Title complete -->
               <?php include("add_teacher.php");?>
               <?php
               break;
-              case 'showstudents_teacher':
+            case 'showstudents_teacher':
                 ?>
                 <!-- Dashboard Title -->
                 <div class="title">
                     <i class="uil uil-book-reader"></i>
-                    <span class="text">Students</span>
+                    <span class="text">View Students</span>
                 </div>
                 <!-- Dashboard Title complete -->
                 <?php include("../teacher/view_students.php"); ?>
                 <?php
-               break;
+             break;
             case 'show_inquiry':
-            ?>
-            <?php include("view_inquiry.php");?>
-            <?php
-                break;
+                ?>
+                <?php include("view_inquiry.php");?>
+                <?php
+             break;
             case 'send_hw':
-            ?>
-            <?php include("../teacher/send_hw.php");?>
-            <?php
-                break;
+                ?>
+                <?php include("../teacher/send_hw.php");?>
+                <?php
+             break;
             case 'view_hw':
-            ?>
-            <?php include("../teacher/view_hw.php");?>
-            <?php
-                break;
+                ?>
+                <?php include("../teacher/view_hw.php");?>
+                <?php
+             break;
             case 'view_hm_std':
-            ?>
-            <?php include("../student/view_hw.php");?>
-            <?php
-                break;
+                ?>
+                <?php include("../student/view_hw.php");?>
+                <?php
+             break;
 
             default:
                 echo 'unknown request';
-            break;
+             break;
         }
     }
 

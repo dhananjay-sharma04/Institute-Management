@@ -1,5 +1,4 @@
 $(()=>{
-
     $.ajax({
         type: "POST",
         url: 'admin/admin_ajax.php',
@@ -11,7 +10,6 @@ $(()=>{
         }
       });
 })
- 
 function showstudents(e){
     $.ajax({
         type: "POST",
@@ -36,31 +34,6 @@ function addstudent(e){
         }
       });
 }
-// function updatestudent(e3){
-//     $.ajax({
-//         type: "POST",
-//         url: 'admin/admin_ajax.php',
-//         data: {
-//             request: 'updatestudent'
-//         },
-//         success: (e)=>{
-//             $('#main-content').html(e)
-//         }
-//       });
-// }
-// function deletestudent(e4){
-//     $.ajax({
-//         type: "POST",
-//         url: 'admin/admin_ajax.php',
-//         data: {
-//             request: 'deletestudent'
-//         },
-//         success: (e)=>{
-//             $('#main-content').html(e)
-//         }
-//       });
-// }
-
 function std_attend(stdclass = 0){
     $.ajax({
         type: "POST",

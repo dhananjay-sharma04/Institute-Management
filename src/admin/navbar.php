@@ -116,16 +116,11 @@ elseif(!isset($_SESSION['role'])){
             <i class="fa fa-search" aria-hidden="true"></i>
             <input type="text" placeholder="Search...">
         </div>
-        <?php
-            echo $_SESSION['name'];
-        ?>
+        
         <div dropdown>
-            <a href=""><img src="Image/Dhananjay.JPG" alt="Profile Photo" /></a>
-            <!-- <ul>
-                <li><a class="dropdown-item" href="#">My profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul> -->
+            <?php
+                echo $_SESSION['name'];
+            ?>
         </div>
     </div>
     <!-- Dashboard Header complete -->

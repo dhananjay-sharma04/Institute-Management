@@ -33,12 +33,9 @@ elseif($_SESSION['role']=='student')
             <input type="text" placeholder="Search...">
         </div>
         <div dropdown>
-            <img src="src/img/login.png" alt="Profile Photo" />
-            <!-- <ul>
-                <li><a class="dropdown-item" href="#">My profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul> -->
+            <?php
+                echo $_SESSION['name'];
+            ?>
         </div>
     </div>
     <!-- Dashboard Header complete -->
