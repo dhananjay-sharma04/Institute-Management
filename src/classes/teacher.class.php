@@ -156,17 +156,24 @@ class Teacher extends Config
 
         return false;
     }
-    public function view_homework($id)
+    public function view_homework($id,$role)
     {
         $success=false;
         if(isset($id))
-        {
-            // print_r($id);
-            $view = $this->db->query("SELECT * FROM `hw_table` where id=?",$id);
-            return $view->fetchAll();
-            
-        }
-        return $success;
+        { if($role=="teacher")
+                {
+                    // print_r($role);
+                    echo'dddd';
+                    $view = $this->db->query("SELECT * FROM `hw_table` where id=?",$id);
+                    return $view->fetchAll();
+                }  // print_r($id);
+                elseif($role=="admin"){
+                    // print_r($role);
+                    $view = $this->db->query("SELECT * FROM `hw_table`");
+                    return $view->fetchAll();
+                }
+            return $success;
+         }
     }
     public function delete_homework()
     {

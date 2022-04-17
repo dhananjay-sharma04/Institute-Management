@@ -50,6 +50,18 @@ elseif(!isset($_SESSION['role'])){
             </ul>
         </li>
         <li>
+            <div class="icon-link arrow">
+                    <i class="uil uil-book-reader"></i>
+                    <span class="link-name">Homwork</span>
+                <i class="uil uil-angle-down"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><span class="link-name" href="">Homwwork</span></li>
+                <li onclick="view_hw()">View homeworks</li>
+                <li onclick="send_hw()">send HW</li>
+            </ul>
+        </li> 
+        <li>
             <div class="icon-link">
                 <i class="uil uil-clock"></i>
                 <span class="link-name">Time Table</span>
