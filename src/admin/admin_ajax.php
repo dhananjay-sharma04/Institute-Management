@@ -96,12 +96,22 @@
                break;
             case 'show_inquiry':
             ?>
-            <?php include("view_inquiry.php");?>2
+            <?php include("view_inquiry.php");?>
             <?php
                 break;
             case 'send_hw':
             ?>
-            <?php include("../teacher/send_hw.php");?>2
+            <?php include("../teacher/send_hw.php");?>
+            <?php
+                break;
+            case 'view_hw':
+            ?>
+            <?php include("../teacher/view_hw.php");?>
+            <?php
+                break;
+            case 'view_hm_std':
+            ?>
+            <?php include("../student/view_hw.php");?>
             <?php
                 break;
 

@@ -133,4 +133,28 @@ function showteacher(e){
             $('#main-content').html(e)
         }
       });
+}
+ function view_hw(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'view_hw'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 
+ function view_hm_std(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'view_hm_std'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
 } 

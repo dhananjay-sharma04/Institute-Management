@@ -4,8 +4,8 @@ session_start();
 $id =$_SESSION['uid'];
 $teacher = new Teacher();
 $homeworks= $teacher->view_homework($id);
-print_r($id);
-print_r($homeworks);
+// print_r($id);
+// print_r($homeworks);
 if($homeworks==true)
 {
 
@@ -15,10 +15,9 @@ if($homeworks==true)
     <thead class="bg-dark text-white">
     <tr>
     <th scope="col">#</th>
-    <th scope="col">Name</th>&nbsp
-    <th scope="col">Class</th>
-    <th scope="col">Email</th>
-    <th scope="col">Phone Number</th>
+    <th scope="col">class</th>&nbsp
+    <th scope="col">date</th>
+    <th scope="col">description</th>
     <th scope="col">Actions</th>
     </tr>
     </thead>
@@ -29,15 +28,14 @@ if($homeworks==true)
         $counter++;
         echo('<tr>
         <td scope="row">'.$counter.'</td>
-        <td>'.$student["name"].'</td>&nbsp
-        <td>'.$student["class"].'</td>
-        <td>'.$student["email"].'</td>
-        <td>'.$student["phone_number"].'</td>
+        <td>'.$homework["class"].'</td>&nbsp
+        <td>'.$homework["date"].'</td>
+        <td>'.$homework["description"].'</td>
         <td>
         <div class="container">
         <div class="row">
-        <div class="col"><a href="admin/update_student.php?student_id='.$student["uid"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
-        <div class="col"><a href="admin/delete_student.php?student_id='.$student["uid"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
+        <div class="col"><a href="admin/update_student.php?student_id='.$homework["hw_id"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
+        <div class="col"><a href="admin/delete_student.php?student_id='.$homework["hw_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
         </div>
         </div>
         </td>

@@ -31,13 +31,16 @@
                 <li><span class="link-name" href="">Time Table</span></li>
             </ul>
         </li>
-        <li onclick="send_hw()">
-            <div class="icon-link">
-                <i class="uil uil-pen" ></i>
-                <span class="link-name">Send Homework</span>
+        <li>
+            <div class="icon-link arrow">
+                    <i class="uil uil-book-reader"></i>
+                    <span class="link-name">Homwork</span>
+                <i class="uil uil-angle-down"></i>
             </div>
-            <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Send homework</span></li>
+            <ul class="sub-menu">
+                <li><span class="link-name" href="">Homwwork</span></li>
+                <li onclick="view_hw()">View homeworks</li>
+                <li onclick="send_hw()">send HW</li>
             </ul>
         </li>
         <li>

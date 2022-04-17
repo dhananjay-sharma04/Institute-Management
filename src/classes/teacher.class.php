@@ -161,7 +161,7 @@ class Teacher extends Config
         $success=false;
         if(isset($id))
         {
-            print_r($id);
+            // print_r($id);
             $view = $this->db->query("SELECT * FROM `hw_table` where id=?",$id);
             return $view->fetchAll();
             
