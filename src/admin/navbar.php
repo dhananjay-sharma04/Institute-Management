@@ -25,7 +25,7 @@ elseif(!isset($_SESSION['role'])){
                     <li><span class="link-name">Home</span></li>
                 </ul>
         </li>
-        <li>
+        <li> 
             <div class="icon-link arrow">
                     <i class="uil uil-book-reader"></i>
                     <span class="link-name">Students</span>

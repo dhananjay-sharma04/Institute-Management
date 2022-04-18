@@ -158,6 +158,7 @@ class Teacher extends Config
     }
     public function view_homework($id,$role)
     {
+        // print_r($role);
         $success=false;
         if(isset($id))
         { if($role=="teacher")

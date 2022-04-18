@@ -2,7 +2,7 @@
 // Import main class
 require "../classes/admin.class.php";
 require "../classes/structure.class.php";
-
+session_start();
 // Start session
 // Session::init();
 session_start();
@@ -58,6 +58,7 @@ foreach ($inqs as $inq) {
         <td>'.$inq["gender"].'</td>
 
         <td>
+        
         <div class="container">
             <div class="row">
             <div class="col"><a href="admin/delete_inquiry.php?inq_id='.$inq["ig_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>            </div>

@@ -1,4 +1,5 @@
-<?php include('header.php');
+<?php
+include('header.php');
 require "classes/admin.class.php";
 require "classes/structure.class.php";
 $con = Structure::header("Login");
@@ -88,16 +89,17 @@ if(isset($_POST['submit']))
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-calendar" aria-hidden="true"></i>
                 </span>
-                <input type="date" name="dob" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required/>                <label class="form-label" for="form12">Date of Birth</label>
+                <input type="date" name="dob" id="form12" class="form-control" max="<?php echo date("Y-m-d"); ?>" required/>
+                <label class="form-label" for="form12">Date of Birth</label>
               </div>
               <!-- Gender selector -->
               <div class="btn-group input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-users" aria-hidden="true"></i>&nbsp;Gender
                 </span>
-                <input type="radio" class="btn-check" value="male" name="options" id="option1" autocomplete="off" required/>                
+                <input type="radio" class="btn-check" value="male" name="options" id="option1" autocomplete="off" required/>
                 <label class="btn btn-info" for="option1">Male</label>
-                <input type="radio" class="btn-check" value="female" name="options" id="option2" autocomplete="off" required/>                
+                <input type="radio" class="btn-check" value="female" name="options" id="option2" autocomplete="off" required/>
                 <label class="btn btn-info" for="option2">Female</label>
               </div>
               <!-- Standard selector -->
@@ -125,7 +127,8 @@ if(isset($_POST['submit']))
                 <span class="input-group-text" id="basic-addon1">
                   <i class="fa fa-address-book" aria-hidden="true"></i>
                 </span>
-              <input type="number" name="ph_no" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>                <label class="form-label" for="form12">Phone number</label>
+                <input type="number" name="ph_no" id="form12" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" required/>
+                <label class="form-label" for="form12">Phone number</label>
               </div>
               <!-- Email input -->
               <div class="form-outline input-group mb-3">
