@@ -19,7 +19,8 @@ if($homeworks==true)
     <th scope="col">date</th>
     <th scope="col">description</th>
     <th scope="col">given by</th>
-    <th scope="col">Actions</th>
+    <th scope="col">hw</th>
+    <th scope="col">action</th>
     </tr>
     </thead>
     <tbody>');
@@ -27,7 +28,7 @@ if($homeworks==true)
     // print_r($students);
     foreach ($homeworks as $homework) {
         $counter++;
-        $result=$teacher->view_user($homework['id']);
+        $result=$teacher->view_hw_sender($homework['id']);
         // print_r($result);
         // $q="SELECT `name` FROM `user` WHERE uid=1"
         // $result=$this->db->query("SELECT `name` FROM `user` WHERE uid=?",$homework['id']);
@@ -37,11 +38,11 @@ if($homeworks==true)
         <td>'.$homework["date"].'</td>
         <td>'.$homework["description"].'</td>
         <td>'.$result['name'].'</td>
+        <td ><a href="file/'.$homework['location'].'" style="display:flex;    justify-content: center;"><i class="fa-solid fa-file-arrow-down fa-lg"></i></a></td>
         <td>
         <div class="container">
         <div class="row">
-        <div class="col"><a href="admin/update_student.php?student_id='.$homework["hw_id"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
-        <div class="col"><a href="admin/delete_student.php?student_id='.$homework["hw_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
+        <div class="col"><a href="teacher/delete_hw.php?hw_id='.$homework["hw_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
         </div>
         </div>
         </td>

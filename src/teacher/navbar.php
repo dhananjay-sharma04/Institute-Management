@@ -40,7 +40,7 @@
             <ul class="sub-menu">
                 <li><span class="link-name" href="">Homwwork</span></li>
                 <li onclick="view_hw()">View homeworks</li>
-                <li onclick="send_hw()">send HW</li>
+                <li onclick="send_hw()">send HW</li> 
             </ul>
         </li>
         <li>

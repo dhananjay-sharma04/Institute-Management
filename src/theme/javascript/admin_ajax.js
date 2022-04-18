@@ -41,7 +41,7 @@ function std_attend(stdclass = '%'){
         data: {
             request: 'std_attend',
             stdclass: stdclass
-        },
+        }, 
         success: (e)=>{
             $('#main-content').html(e)
         }

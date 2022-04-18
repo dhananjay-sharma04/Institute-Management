@@ -1,15 +1,15 @@
 <?php
-    require "../classes/admin.class.php";
+    require "../classes/teacher.class.php";
     require "../classes/structure.class.php";
-    print_r( $_GET['inq_id']);
-    if (isset($_GET['inq_id']) ) {
-        $admin = new Admin();
-        if ($admin->delete_inquiry(filter_input(INPUT_GET, "inq_id", FILTER_DEFAULT)) == true) {
+    print_r( $_GET['hw_id']);
+    if (isset($_GET['hw_id']) ) {
+        $teacher= new Teacher();
+        if ($teacher->delete_hw(filter_input(INPUT_GET, "hw_id", FILTER_DEFAULT)) == true) {
             // On success
             // Structure::successBox("Delete Student", "Successfully deleted student!", Structure::nakedURL("view_students.php"));
             ?>
             <script>
-              alert('Successfully deleted inquiry!');
+              alert('Successfully deleted HOMEWORK!');
               location.href='index.php';
     
             </script>
@@ -18,12 +18,11 @@
             // On failure
             ?>
             <script>
-              alert('unable to delete inquiry!');
+              alert('Unable to delete HOMEWORK');
               location.href='index.php';
     
             </script>
-            <?php
-        }
+            <?php        }
         //$admin->close_DB();
     }
      

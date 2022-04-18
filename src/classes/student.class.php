@@ -24,4 +24,12 @@ class Student extends Config
         }
         return $success;
     }
+    public function view_hw_sender($id)
+    {
+        if(isset($id)){
+            $view=$this->db->query("SELECT `name` FROM `user` WHERE uid=?",$id);
+            return $view->fetchArray();
+        }
+        
+    }
 }

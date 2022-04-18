@@ -18,7 +18,7 @@ echo('<main role="main" class="container mt-3  mx-auto">');
 echo('<form method="post" action="admin/std_attendence.php"><hr>
         <table class="table table-striped table-hover text-secondary">
         <thead class="bg-dark text-white">
-        <select name="class" id="stdclass" onchange="std_attend($(this)[0].value)">
+        <select name="class"  id="stdclass" onchange="std_attend($(this)[0].value)">
           <option value=""disabled selected>choose your class </option>
           <option value="10">10</option>
           <option value="9">9</option>

@@ -176,13 +176,29 @@ class Teacher extends Config
             return $success;
          }
     }
-    public function view_user($id)
+    public function view_hw_sender($id)
     {
         if(isset($id)){
             $view=$this->db->query("SELECT `name` FROM `user` WHERE uid=?",$id);
             return $view->fetchArray();
         }
         
+    }
+    public function delete_hw($id)
+    {
+        $success = false; // variable to return if insertion success or failed
+
+        // check if items to insert exists in the input array or note
+        if (isset($id)) {
+            $insert = $this->db->query("DELETE FROM `hw_table` WHERE `hw_id`=?", $id);
+
+            // if more than 1 row returned then it insertion was successfull
+            if ($insert->affectedRows() > 0) {
+                $success = true;
+            }
+        }
+
+        return $success;
     }
 
     // Other DB functions
