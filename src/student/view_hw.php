@@ -23,6 +23,7 @@
     <th scope="col">class</th>&nbsp
     <th scope="col">date</th>
     <th scope="col">description</th>
+    <th scope="col">Homework</th>
     </tr>
     </thead>
     <tbody>');
@@ -34,6 +35,7 @@
         <td>'.$homework["class"].'</td>&nbsp
         <td>'.$homework["date"].'</td>
         <td>'.$homework["description"].'</td>
+        <td ><a href="file/'.$homework['location'].'" style="display:flex;    justify-content: center;"><i class="fa-solid fa-file-arrow-down fa-lg"></i></a></td>
         <td>
         </tr>');
     }

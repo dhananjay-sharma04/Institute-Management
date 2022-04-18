@@ -70,19 +70,19 @@ elseif(!isset($_SESSION['role'])){
                 <li><span class="link-name"><b>Time Table</b></span></li>
             </ul>
         </li>
-        <li>
+        <li onclick="std_attend()">
             <div class="icon-link">
                 <i class="uil uil-user-check" ></i>
-                <span class="link-name" onclick="std_attend()">Attendence</span>
+                <span class="link-name">Attendence</span>
             </div>
             <ul class="sub-menu blank">
                 <li><span class="link-name" >Attendence</span></li>
             </ul>
         </li>
-        <li>
+        <li  onclick="show_inquiry()" >
             <div class="icon-link">
                 <i class="uil uil-clock"></i>
-                <span class="link-name" onclick="show_inquiry()">Inquiry</span>
+                <span class="link-name">Inquiry</span>
             </div>
             <ul class="sub-menu blank">
                 <li><span class="link-name"><b>Inquiry</b></span></li>

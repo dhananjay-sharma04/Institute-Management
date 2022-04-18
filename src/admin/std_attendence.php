@@ -1,23 +1,20 @@
 <?php
 // Import main class
 require "../classes/admin.class.php";
-require "../classes/structure.class.php";
+session_start();
 
-Structure::header("Student Attendence - Admin");
-require "../admin/navbar.php";
-
-// Main Content Goes Here
 $admin    = new Admin();
-$students = $admin->view_student(0, false,$_POST['stdclass']);
-// print_r($students);die;
+
 if(isset($_POST['class'])){
   $date = date('Y-m-d',time());
   foreach($_POST as $k => $v){
-     $temp=$admin ->attendence($k,$v,$date,$_SESSION['uid']);
+    $temp=$admin->attendence($k,$v,$date,$_SESSION['uid']);
   }
+  return;
 }
+
+$students = $admin->view_student(0, false,isset($_POST['stdclass']) ? $_POST['stdclass'] : '%');
 echo('<main role="main" class="container mt-3  mx-auto">');
-Structure::topHeading("Student Attendence");
 echo('<form method="post" action="admin/std_attendence.php"><hr>
         <table class="table table-striped table-hover text-secondary">
         <thead class="bg-dark text-white">
@@ -60,8 +57,8 @@ foreach ($students as $student) {
         </td>
       </tr>');
 }
-echo('</tbody></table></main>');
-echo(' <button type="submit">SUBMIT</button></form>');
+echo('</tbody></table>');
+echo(' <button name="class" type="submit">SUBMIT</button></form></main>');
 
 $admin->close_DB();
 

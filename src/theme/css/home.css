@@ -320,7 +320,22 @@ nav.close ~ .dashboard .top{
     max-width: 600px;
     width: 100%;
     margin: 0 30px;
-}
+}  
+/* form{
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    column-gap: 1em;
+    row-gap: 1em;
+    margin: 10px auto;
+  }
+input{
+    width: 100%;
+    height: 30px;
+    border-radius: 3px;
+    padding: 10px;
+    border: 1px solid;
+} */
 .top .search-box input{
     position: absolute;
     border: 1px solid var(--border-color);

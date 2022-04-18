@@ -23,8 +23,8 @@ if(isset($_POST['submit']))
     $email=$_POST['email']; 
     $dob=$_POST['dob']; 
     $date = date('Y-m-d',time());
-    // print_r($con);
-    $q="INSERT INTO inquiry_table (`name`, `school_name`, `class`, `p_number`, `email`, `dob`, `inq_date`,gender) VALUES ('$name', '$schoo_name', $class, $p_num, '$email', $dob, $date,'$gender')";
+    print_r($date);
+    $q="INSERT INTO inquiry_table (`name`, `school_name`, `class`, `p_number`, `email`, `dob`, `inq_date`,gender) VALUES ('$name', '$schoo_name', $class, $p_num, '$email', '$dob', '$date','$gender')";
     $insert = mysqli_query($con,$q);
     if(false != $insert){ ?>
       <script>

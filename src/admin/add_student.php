@@ -31,7 +31,9 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
 } else {
 
   // Form to fill details
-    echo('<main role="main" class="container mx-auto mt-3">');
+    echo('
+    
+    <main role="main" class="container mx-auto mt-3">');
     Structure::topHeading("Add Student");
     echo('<hr>
           <form method="POST" action="admin/add_student.php">

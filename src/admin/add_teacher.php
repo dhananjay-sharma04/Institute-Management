@@ -24,10 +24,16 @@ if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number"
         filter_input(INPUT_POST, "password", FILTER_DEFAULT)
     )) === true) {
         // On success
-        Structure::successBox("Add teacher", "Successfully added teacher!", structure::nakedURL("view_teachers.php"));
-    } else {
-        // On failure
-        Structure::errorBox("Add teacher", "Unable to add a teacher!");
+        echo"<script>
+        alert('Successfully added teacher!');
+        location.href='index.php';
+      </script>";   
+      } else {
+    // On failure 
+        echo"<script>
+        alert('insertion failed');
+        location.href='index.php';
+      </script>";
     }
     $admin->close_DB();
 } else {

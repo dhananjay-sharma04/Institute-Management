@@ -19,7 +19,6 @@ echo('<main role="main" class="container mt-3  mx-auto">');
 Structure::topHeading("View Teachers");
 echo('<hr>
         <table class="table table-striped table-hover text-secondary">
-        <caption><a href="'.Structure::nakedURL("").'" style="text-decoration: none;">Go back!</a></caption>
         <thead class="bg-dark text-white">
           <tr>
             <th scope="col">#</th>

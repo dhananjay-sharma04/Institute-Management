@@ -97,9 +97,7 @@
                 <?php
              break;
             case 'show_inquiry':
-                ?>
-                <?php include("view_inquiry.php");?>
-                <?php
+                include("view_inquiry.php");
              break;
             case 'send_hw':
                 ?>

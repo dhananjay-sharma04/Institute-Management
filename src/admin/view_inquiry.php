@@ -1,8 +1,7 @@
 <?php
 // Import main class
 require "../classes/admin.class.php";
-require "../classes/structure.class.php";
-session_start();
+// require "../classes/structure.class.php";
 // Start session
 // Session::init();
 session_start();
@@ -16,7 +15,7 @@ session_start();
 // Main Content Goes Here
 $admin    = new Admin();
 $inqs = $admin->view_inquiry();
-Structure::topHeading("INQUIRIES");
+// Structure::topHeading("INQUIRIES");
 echo('<hr>
         <table class="table table-striped table-hover text-secondary">
        
@@ -71,7 +70,7 @@ echo('</tbody></table></main>');
 $admin->close_DB();
 
 // Display Footer
-Structure::footer();
+// Structure::footer();
 
 // delete object
 unset($admin);

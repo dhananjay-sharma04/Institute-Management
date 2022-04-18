@@ -34,7 +34,7 @@ function addstudent(e){
         }
       });
 }
-function std_attend(stdclass = 0){
+function std_attend(stdclass = '%'){
     $.ajax({
         type: "POST",
         url: 'admin/admin_ajax.php',

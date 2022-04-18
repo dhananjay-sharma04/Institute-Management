@@ -15,7 +15,7 @@ var getStatus = localStorage.getItem("status");
 if (getStatus && getStatus === "close") {
     sidebar.classList.toggle("close");
 }
-
+//on click change theme
 modeToggle.addEventListener("click", () => {
     body.classList.toggle("dark");
     if(body.classList.contains("dark")){
