@@ -22,25 +22,16 @@
                 <li onclick="addstudent()">Add</li>
             </ul>
         </li>
-        <li> 
-            <div class="icon-link">
-                <i class="uil uil-clock"></i>
-                <span class="link-name">Time Table</span>
-            </div>
-            <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Time Table</span></li>
-            </ul>
-        </li>
         <li>
             <div class="icon-link arrow">
-                    <i class="uil uil-book-reader"></i>
+                    <i class="uil uil-notes"></i>
                     <span class="link-name">Homwork</span>
                 <i class="uil uil-angle-down"></i>
             </div>
             <ul class="sub-menu">
-                <li><span class="link-name" href="">Homwwork</span></li>
-                <li onclick="view_hw()">View homeworks</li>
-                <li onclick="send_hw()">send HW</li> 
+                <li><span class="link-name" href="">Homework</span></li>
+                <li onclick="view_hw()">View</li>
+                <li onclick="send_hw()">Upload</li> 
             </ul>
         </li>
         <li>

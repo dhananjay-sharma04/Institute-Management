@@ -15,17 +15,15 @@ Session::init();
 // Main Content Goes Here
 $admin    = new Admin();
 $teachers = $admin->view_teacher(0, false);
-echo('<main role="main" class="container mt-3  mx-auto">');
-Structure::topHeading("View Teachers");
-echo('<hr>
-        <table class="table table-striped table-hover text-secondary">
-        <thead class="bg-dark text-white">
+echo('<main role="main">');
+// Structure::topHeading("View Teachers");
+echo('<table class="content-table">
+        <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
-           <br> 
             <th scope="col">Subjects</th>
             <th scope="col">Students</th>
             <th scope="col">Actions</th>
@@ -44,12 +42,8 @@ foreach ($teachers as $teacher) {
         <td>'.($teacher['uid']).'</td>
         <td>'.($teacher['uid']).'</td>
         <td>
-        <div class="container">
-            <div class="row">
-              <div class="col"><a href="admin/update_teacher.php?teacher_id='.($teacher["uid"]).'" alt="Edit"><img src="src/icons/edit-24px.svg" alt="Edit"></a></div>
-              <div class="col"><a href="admin/delete_teacher.php?teacher_id='.($teacher["uid"]).'"  alt="Delete"><img src="src/icons/delete-24px.svg" alt="Delete"></a></div>
-            </div>
-          </div>
+          <div><a href="admin/update_teacher.php?teacher_id='.($teacher["uid"]).'" alt="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+          <div><a href="admin/delete_teacher.php?teacher_id='.($teacher["uid"]).'"  alt="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
         </td>
       </tr>');
 }

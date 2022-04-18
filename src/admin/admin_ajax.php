@@ -97,20 +97,49 @@
                 <?php
              break;
             case 'show_inquiry':
-                include("view_inquiry.php");
-             break;
-            case 'send_hw':
                 ?>
-                <?php include("../teacher/send_hw.php");?>
-                <?php
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-question-circle"></i>
+                    <span class="text">Inquiry</span>
+                </div>
+                <!-- Dashboard Title complete -->
+                <!-- Dashboard Main content -->
+                <?php include("view_inquiry.php"); 
              break;
             case 'view_hw':
                 ?>
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-notes"></i>
+                    <span class="text">View Homework</span>
+                </div>
+                <!-- Dashboard Title complete -->
+                <!-- Dashboard Main content -->
                 <?php include("../teacher/view_hw.php");?>
+                <?php
+             break;
+            case 'send_hw':
+                ?>
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-notes"></i>
+                    <span class="text">Upload Homework</span>
+                </div>
+                <!-- Dashboard Title complete -->
+                <!-- Dashboard Main content -->
+                <?php include("../teacher/send_hw.php");?>
                 <?php
              break;
             case 'view_hm_std':
                 ?>
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-notes"></i>
+                    <span class="text">View Homework</span>
+                </div>
+                <!-- Dashboard Title complete -->
+                <!-- Dashboard Main content -->
                 <?php include("../student/view_hw.php");?>
                 <?php
              break;

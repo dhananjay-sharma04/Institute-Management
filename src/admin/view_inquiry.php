@@ -16,20 +16,19 @@ session_start();
 $admin    = new Admin();
 $inqs = $admin->view_inquiry();
 // Structure::topHeading("INQUIRIES");
-echo('<hr>
-        <table class="table table-striped table-hover text-secondary">
-       
-        <thead class="bg-dark text-white">
+echo('<table class="content-table"> 
+        <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>&nbsp
-            <th scope="col">School Name</th>&nbsp
+            <th scope="col">Name</th>
+            <th scope="col">School Name</th>
             <th scope="col">Class</th>
-            <th scope="col">phone number</th>
+            <th scope="col">Phone number</th>
             <th scope="col">Email</th>
-            <th scope="col">date of birth</th>
-            <th scope="col">students date</th>
-            <th scope="col">gender</th>
+            <th scope="col">Date of Birth</th>
+            <th scope="col">Inquiry date</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>');
@@ -47,7 +46,7 @@ foreach ($inqs as $inq) {
 
     echo('<tr>
         <td scope="row">'.$counter.'</td>
-        <td>'.$inq["name"].'</td>&nbsp
+        <td>'.$inq["name"].'</td>
         <td>'.$inq["school_name"].'</td>
         <td>'.$inq["class"].'</td>
         <td>'.$inq["p_number"].'</td>
@@ -57,11 +56,7 @@ foreach ($inqs as $inq) {
         <td>'.$inq["gender"].'</td>
 
         <td>
-        
-        <div class="container">
-            <div class="row">
-            <div class="col"><a href="admin/delete_inquiry.php?inq_id='.$inq["ig_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>            </div>
-          </div>
+          <a href="admin/delete_inquiry.php?inq_id='.$inq["ig_id"].'"  alt="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
         </td>
       </tr>');
 }

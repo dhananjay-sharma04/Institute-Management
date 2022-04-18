@@ -20,7 +20,6 @@
             <script>
               alert('unable to delete inquiry!');
               location.href='index.php';
-    
             </script>
             <?php
         }

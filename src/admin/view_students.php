@@ -15,11 +15,9 @@ Session::init();
 // Main Content Goes Here
 $admin    = new Admin();
 $students = $admin->view_student(0, false);
-Structure::topHeading("View Students");
-echo('<hr>
-        <table class="table table-striped table-hover text-secondary">
-       
-        <thead class="bg-dark text-white">
+// Structure::topHeading("View Students");
+echo('<table class="content-table"> 
+        <thead>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>&nbsp
@@ -49,12 +47,8 @@ foreach ($students as $student) {
         <td>'.$student["email"].'</td>
         <td>'.$student["phone_number"].'</td>
         <td>
-        <div class="container">
-            <div class="row">
-              <div class="col"><a href="admin/update_student.php?student_id='.$student["uid"].'" alt="Edit"><img src="theme/icons/edit-24px.svg" alt="Edit"></a></div>
-              <div class="col"><a href="admin/delete_student.php?student_id='.$student["uid"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
-            </div>
-          </div>
+          <div><a href="admin/update_student.php?student_id='.$student["uid"].'" alt="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a></div>
+          <div><a href="admin/delete_student.php?student_id='.$student["uid"].'"  alt="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
         </td>
       </tr>');
 }

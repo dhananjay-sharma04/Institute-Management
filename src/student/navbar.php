@@ -10,22 +10,13 @@
                     <li><span class="link-name" href="">Home</span></li>
                 </ul>
         </li>
-        <li>
-            <div class="icon-link">
-                <i class="uil uil-clock"></i>
-                <span class="link-name">Time Table</span>
-            </div>
-            <ul class="sub-menu blank">
-                <li><span class="link-name" href="">Time Table</span></li>
-            </ul>
-        </li>
         <li onclick="view_hm_std()">
             <div class="icon-link">
-                <i class="uil uil-book-reader"></i>
-                <span class="link-name">view homework</span>
+                <i class="uil uil-notes"></i>
+                <span class="link-name">Homework</span>
             </div>
             <ul class="sub-menu blank">
-                <li ><span class="link-name" href="">view homework</span></li>
+                <li ><span class="link-name" href="">Homework</span></li>
             </ul>
         </li>
         <li>

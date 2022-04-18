@@ -10,17 +10,16 @@ $homeworks= $teacher->view_homework($id,$role);
 // print_r($homeworks);
 if($homeworks==true)
 {
-    echo('<hr>
-    <table class="table table-striped table-hover text-secondary">
-    <thead class="bg-dark text-white">
+    echo('<table class="content-table">
+    <thead>
     <tr>
     <th scope="col">#</th>
-    <th scope="col">class</th>&nbsp
-    <th scope="col">date</th>
-    <th scope="col">description</th>
-    <th scope="col">given by</th>
-    <th scope="col">hw</th>
-    <th scope="col">action</th>
+    <th scope="col">Class</th>
+    <th scope="col">Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Given by</th>
+    <th scope="col">HW</th>
+    <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>');
@@ -34,18 +33,12 @@ if($homeworks==true)
         // $result=$this->db->query("SELECT `name` FROM `user` WHERE uid=?",$homework['id']);
         echo('<tr>
         <td scope="row">'.$counter.'</td>
-        <td>'.$homework["class"].'</td>&nbsp
+        <td>'.$homework["class"].'</td>
         <td>'.$homework["date"].'</td>
         <td>'.$homework["description"].'</td>
         <td>'.$result['name'].'</td>
         <td ><a href="file/'.$homework['location'].'" style="display:flex;    justify-content: center;"><i class="fa-solid fa-file-arrow-down fa-lg"></i></a></td>
-        <td>
-        <div class="container">
-        <div class="row">
-        <div class="col"><a href="teacher/delete_hw.php?hw_id='.$homework["hw_id"].'"  alt="Delete"><img src="theme/icons/delete-24px.svg" alt="Delete"></a></div>
-        </div>
-        </div>
-        </td>
+        <td><a href="teacher/delete_hw.php?hw_id='.$homework["hw_id"].'"  alt="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
         </tr>');
     }
     echo('</tbody></table></main>');
