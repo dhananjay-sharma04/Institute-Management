@@ -1,5 +1,6 @@
 <?php
 require "../classes/teacher.class.php";
+// require "../classes/database.class.php";
 session_start();
 $id =$_SESSION['uid'];
 $role =$_SESSION['role'];
@@ -9,16 +10,15 @@ $homeworks= $teacher->view_homework($id,$role);
 // print_r($homeworks);
 if($homeworks==true)
 {
-
     echo('<hr>
     <table class="table table-striped table-hover text-secondary">
-    
     <thead class="bg-dark text-white">
     <tr>
     <th scope="col">#</th>
     <th scope="col">class</th>&nbsp
     <th scope="col">date</th>
     <th scope="col">description</th>
+    <th scope="col">given by</th>
     <th scope="col">Actions</th>
     </tr>
     </thead>
@@ -27,11 +27,16 @@ if($homeworks==true)
     // print_r($students);
     foreach ($homeworks as $homework) {
         $counter++;
+        $result=$teacher->view_user($homework['id']);
+        // print_r($result);
+        // $q="SELECT `name` FROM `user` WHERE uid=1"
+        // $result=$this->db->query("SELECT `name` FROM `user` WHERE uid=?",$homework['id']);
         echo('<tr>
         <td scope="row">'.$counter.'</td>
         <td>'.$homework["class"].'</td>&nbsp
         <td>'.$homework["date"].'</td>
         <td>'.$homework["description"].'</td>
+        <td>'.$result['name'].'</td>
         <td>
         <div class="container">
         <div class="row">

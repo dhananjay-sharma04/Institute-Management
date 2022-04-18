@@ -16,7 +16,6 @@
     $homeworks=$student->view_homework($class);
     echo('<hr>
     <table class="table table-striped table-hover text-secondary">
-    
     <thead class="bg-dark text-white">
     <tr>
     <th scope="col">#</th>

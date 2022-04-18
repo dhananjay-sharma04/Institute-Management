@@ -164,7 +164,7 @@ class Teacher extends Config
         { if($role=="teacher")
                 {
                     // print_r($role);
-                    echo'dddd';
+                    // echo'dddd';
                     $view = $this->db->query("SELECT * FROM `hw_table` where id=?",$id);
                     return $view->fetchAll();
                 }  // print_r($id);
@@ -176,8 +176,12 @@ class Teacher extends Config
             return $success;
          }
     }
-    public function delete_homework()
+    public function view_user($id)
     {
+        if(isset($id)){
+            $view=$this->db->query("SELECT `name` FROM `user` WHERE uid=?",$id);
+            return $view->fetchArray();
+        }
         
     }
 
