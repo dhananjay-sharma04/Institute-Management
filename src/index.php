@@ -26,9 +26,11 @@ if(isset($_POST['submit']))
     // print_r($con);
     $q="INSERT INTO inquiry_table (`name`, `school_name`, `class`, `p_number`, `email`, `dob`, `inq_date`,gender) VALUES ('$name', '$schoo_name', $class, $p_num, '$email', $dob, $date,'$gender')";
     $insert = mysqli_query($con,$q);
-    if(false != $insert){
-      echo 'yess';
-    }else{
+    if(false != $insert){ ?>
+      <script>
+        alert('Inquiry submitted');
+      </script>
+    <?php } else{
       print_r($con);
     }
 }
