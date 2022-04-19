@@ -102,7 +102,7 @@ if (isset($_POST['login'])) {
             </div>
             <div class="col">
               <!-- Simple link -->
-              <a href="#!">Forgot password?</a>
+              <a href="../page/forgotpassword.php">Forgot password?</a>
             </div>
           </div>
           <!-- Submit button -->
