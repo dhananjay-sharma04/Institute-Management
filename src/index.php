@@ -31,7 +31,7 @@ if(isset($_POST['submit']))
         history.replaceState(null,null,location.href);
       </script>
     <?php 
-      $body="Thankyou".$name." for showing your intrest in our institute";
+      $body="Thankyou  ".$name." for showing your intrest in our institute";
       $subject="your inyuiry submited";
       sendmail($body,$subject,$email);
     } else{?>

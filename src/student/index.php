@@ -2,13 +2,10 @@
 // Import main class
 require "../classes/student.class.php";
 require "../classes/structure.class.php";
-
 // Start session
 Session::init();
-
 // Check if logged in otherwise redirect to login page
 // Structure::checkLogin();
-
 // Load Header
 Structure::header("Student Panel");
 // if($_SESSION['role']=='teacher')
@@ -21,7 +18,7 @@ Structure::header("Student Panel");
 // }
 // elseif($_SESSION['role']=='student')
 // {
-//     header('Location: /ims/src/student/index.php');
+//  header('Location: /ims/src/student/index.php');
 // }
 // Main Content Goes Here
 $student  = new Student();

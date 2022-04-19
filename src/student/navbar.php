@@ -19,7 +19,7 @@
                 <li ><span class="link-name" href="">Homework</span></li>
             </ul>
         </li>
-        <li>
+        <li onclick="view_attend_std()">
             <div class="icon-link">
                 <i class="uil uil-user-check" ></i>
                 <span class="link-name">Attendence</span>

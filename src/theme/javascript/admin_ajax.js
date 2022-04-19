@@ -132,3 +132,15 @@ function showteacher(e){
         }
       });
 } 
+ function view_attend_std(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'view_attend_std'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 

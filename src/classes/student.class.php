@@ -32,4 +32,13 @@ class Student extends Config
         }
         
     }
+    public function view_attend($id)
+    {
+        if(isset($id))
+        {
+            $attend=$this->db->query("SELECT * FROM `attendance` WHERE std_id=?",$id);
+            return $attend->fetchAll();
+        }
+
+    }
 }

@@ -144,6 +144,18 @@
                 <?php include("../student/view_hw.php");?>
                 <?php
              break;
+            case 'view_attend_std':
+                ?>
+                <!-- Dashboard Title -->
+                <div class="title">
+                    <i class="uil uil-user-check"></i>
+                    <span class="text">Your Attendance</span>
+                </div>
+                <!-- Dashboard Title complete -->
+                <!-- Dashboard Main content -->
+                <?php include("../student/view_attend.php");?>
+                <?php
+             break;
 
             default:
                 echo 'unknown request';
