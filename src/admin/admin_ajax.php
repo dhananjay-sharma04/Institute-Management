@@ -41,6 +41,7 @@
                 <?php include("view_students.php"); ?>
                 <?php
              break;
+             
             case 'addstudent';
               ?>
               <!-- Dashboard Title -->

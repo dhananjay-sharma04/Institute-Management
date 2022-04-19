@@ -28,11 +28,21 @@ if(isset($_POST['submit']))
     if(false != $insert){ ?>
       <script>
         alert('Inquiry submitted');
+        history.replaceState(null,null,location.href);
       </script>
-    <?php } else{
-      print_r($con);
+    <?php 
+      $body="Thankyou".$name." for showing your intrest in our institute";
+      $subject="your inyuiry submited";
+      sendmail($body,$subject,$email);
+    } else{?>
+      <script>
+        alert('Inquiry not submitted');
+        history.replaceState(null,null,location.href);
+      </script>
+      <?php
     }
 }
+      
 ?>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -175,11 +175,9 @@ class Admin extends Config
     public function update_teacher($teacher_id, $teacher_name, $teacher_phone_number, $email, $password)
     {
         $success = false; // variable to return if insertion success or failed
-
         // check if items to insert exists in the input array or note
         if (isset($teacher_id) && isset($teacher_name) && isset($teacher_phone_number) && isset($email) && isset($password)) {
-            $insert = $this->db->query("UPDATE `user` SET `name`=?, `phone_number`=?, `email`=?, `password`=?,`role`=? WHERE `uid`=?", $teacher_name, $teacher_phone_number, $email, $password, $teacher_id,'teacher');
-
+            $insert = $this->db->query("UPDATE `user` SET `name`=?, `phone_number`=?, `email`=?, `password`=?,`role`=? WHERE `uid`=?", $teacher_name, $teacher_phone_number, $email, $password, 'teacher', $teacher_id);
             // if more than 1 row returned then it insertion was successfull
             return ($insert->affectedRows() > 0);
         }

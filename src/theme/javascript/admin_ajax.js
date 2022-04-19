@@ -22,6 +22,7 @@ function showstudents(e){
         }
       });
 } 
+
 function addstudent(e){
     $.ajax({
         type: "POST",
