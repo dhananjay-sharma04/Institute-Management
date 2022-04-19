@@ -41,4 +41,14 @@ class Student extends Config
         }
 
     }
+    public function change_pass($mail,$pass)
+    {
+        if(isset($id))
+        {
+            $insert = $this->db->query("UPDATE `user` SET `password`=? WHERE `email`=?",$pass,$mail);
+            return ($insert->affectedRows() > 0);
+        }
+
+    }
+    
 }
