@@ -14,10 +14,10 @@ if(isset($_POST['class'])){
 }
 
 $students = $admin->view_student(0, false,isset($_POST['stdclass']) ? $_POST['stdclass'] : '%');
-echo('<main role="main" class="container mt-3  mx-auto">');
-echo('<form method="post" action="admin/std_attendence.php"><hr>
-        <table class="table table-striped table-hover text-secondary">
-        <thead class="bg-dark text-white">
+echo('<main role="main" style="display: flex;justify-content: center;">');
+echo('<form method="post" action="admin/std_attendence.php">
+        <table class="content-table">
+        <thead>
         <select name="class"  id="stdclass" onchange="std_attend($(this)[0].value)">
           <option value=""disabled selected>choose your class </option>
           <option value="10">10</option>
@@ -49,12 +49,6 @@ foreach ($students as $student) {
         <td>'.$student["name"].'</td>
         <td><a><select id="attend" name="'.$student["uid"].'"><option  value="1">present</option><option value="0">absent</option></select></td>
         <td><input type="date" value="'.date('Y-m-d').'" readonly="readonly"/></td>
-        <div class="container">
-            <div class="row">
-              
-            </div>
-          </div>
-        </td>
       </tr>');
 }
 echo('</tbody></table>');
