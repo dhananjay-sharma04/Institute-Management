@@ -7,7 +7,7 @@ require "../classes/structure.class.php";
 Session::init();
 
 // Check if logged in otherwise redirect to login page
-Structure::checkLogin();
+// Structure::checkLogin();
 
 // Load Header
 // Structure::header("Add Teacher - Admin");
@@ -39,31 +39,31 @@ if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number"
 } else {
 
   // Form to fill details
-    echo('<main role="main" class="container mt-3 mx-auto">');
-    Structure::topHeading("Add Teacher");
-    echo('<hr>
+    echo('<main role="main" class="wrapper">');
+    // Structure::topHeading("");
+    echo('
           <form method="POST" action="admin/add_teacher.php">
-            <div class="form-group">
+            <div class="field">
+              <input type="text" name="teacher_name" class="form-control" id="teacher_name" aria-describedby="teacher_name" required>
               <label for="name">Name</label>
-              <input type="text" name="teacher_name" class="form-control" id="teacher_name" aria-describedby="teacher_name">
             </div>
-            <div class="form-group">
+            <div class="field">
+              <input type="number" name="teacher_phone_number" class="form-control" id="teacher_phone_number" aria-describedby="teacher_phone_number" required>
               <label for="teacher_phone_number">Phone Number</label>
-              <input type="number" name="teacher_phone_number" class="form-control" id="teacher_phone_number" aria-describedby="teacher_phone_number">
             </div>
-            <div class="form-group">
+            <div class="field">
+              <input type="email" name="email" class="form-control" id="email" aria-describedby="email" required>
               <label for="email">Email address</label>
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="email">
             </div>
-            <div class="form-group">
+            <div class="field">
+              <input type="password" name="password" id="password" class="form-control" id="password" required>
               <label for="password">Password</label>
-              <input type="password" name="password" id="password" class="form-control" id="password">
             </div>
-
-            <div class="row">
-              <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success btn-small">Submit</button>
-               </div>
+            <div class="field">
+                <input type="submit" Value="Add"></input>
+            </div>
+            <div class="field">
+                <input type="reset" Value="Clear"></input>
             </div>
           </form>
       </main>');

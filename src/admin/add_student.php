@@ -32,16 +32,15 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
 
   // Form to fill details
     echo('
-    
-    <main role="main" class="container mx-auto mt-3">');
-    Structure::topHeading("Add Student");
-    echo('<hr>
-          <form method="POST" action="admin/add_student.php">
-            <div class="form-group">
-              <label for="name">Name</label>
+    <main role="main" class="wrapper">');
+    Structure::topHeading("");
+    echo('
+          <form method="POST" action="admin/add_student.php" >
+            <div class="field">
               <input type="text" name="student_name" class="form-control" id="student_name" aria-describedby="student_name" required>
-              </div>
-              <div class="form-group">
+              <label for="name">Name</label>
+            </div>
+            <div class="">
               <label for="Clas">Class</label>
                 <div class="class-list">
                   <select name="class" id="std" required>
@@ -51,29 +50,28 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
                     <option value="8">8</option>
                   </select> 
                 </div>
-              </div>
-            <div class="form-group">
-              <label for="student_phone_number">Phone Number</label>
+            </div>
+            <div class="field">
               <input type="number" name="student_phone_number" class="form-control" id="student_phone_number" aria-describedby="student_phone_number" required>
+              <label for="student_phone_number">Phone Number</label>
             </div>
-            <div class="form-group">
-              <label for="email">Email address</label>
+            <div class="field">
               <input type="email" name="email" class="form-control" id="email" aria-describedby="email" required>
+              <label for="email">Email address</label>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
+            <div class="field">
               <input type="password" name="password" id="password" class="form-control" id="password" required>
+              <label for="password">Password</label>
             </div>
-            <div class="row">
-              <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success btn-small">Submit</button>
-                  <a class="btn btn-primary btn-small" href="'.Structure::nakedURL("index.php").'" role="button">Go back!</a>
-               </div>
+            <div class="field">
+              <input type="submit" value="Add">
+            </div>
+            <div class="field">
+              <input type="reset" value="Clear">
             </div>
           </form>
       </main>');
 }
-
 // Display Footer
 Structure::footer();
 

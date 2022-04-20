@@ -20,7 +20,7 @@ echo('<table class="content-table">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Name</th>&nbsp
+            <th scope="col">Name</th>
             <th scope="col">Class</th>
             <th scope="col">Email</th>
             <th scope="col">Phone Number</th>
@@ -42,7 +42,7 @@ foreach ($students as $student) {
 
     echo('<tr>
         <td scope="row">'.$counter.'</td>
-        <td>'.$student["name"].'</td>&nbsp
+        <td>'.$student["name"].'</td>
         <td>'.$student["class"].'</td>
         <td>'.$student["email"].'</td>
         <td>'.$student["phone_number"].'</td>

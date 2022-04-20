@@ -42,11 +42,13 @@ if(isset($_POST['submit']))
 }
 ?>
 <html>
- <form action="teacher/send_hw.php" method="post" enctype="multipart/form-data">
-        <label for="homework title">home work title</label>
-        <input type="text" name="hw_title"  id="hw_title" required>
+<main class="wrapper">
+    <form action="teacher/send_hw.php" method="post" enctype="multipart/form-data">
+        <div class="field">    
+            <input type="text" name="hw_title"  id="hw_title" required>
+            <label for="homework title">Homework title</label>
         </div>
-        <div class="form-group">
+        <div class="">
             <label for="Clas">Class</label>
             <div class="class-list">
                 <select name="class" id="std" required>
@@ -57,11 +59,19 @@ if(isset($_POST['submit']))
                 </select>
             </div>
         </div>
-        <label for="discip_of_hw">discription of homework</label>
-        <input type="text" name="hw_disc" id="hw_dis">
+        <div class="field">
+            <input type="text" name="hw_disc" id="hw_dis" required>
+            <label for="discip_of_hw">Discription</label>
+        </div>
         <div class="custom-file">
             <input type="file" name="hw_file" class="custom-file-input" id="validatedCustomFile">
         </div>
-        <button type="submit" name="submit">submit</button>
+        <div class="field">
+            <input type="submit" name="submit" value="Upload">
+        </div>
+        <div class="field">
+            <input type="reset" value="Clear">
+        </div>
     </form>
+</main>
 </html>
