@@ -40,8 +40,10 @@ class Student extends Config
 
             if(isset($id))
             {
-                $attend=$this->db->query("SELECT * FROM `attendance` WHERE std_id=? AND attend_date = ?",$id);
+                // print_r($id);
+                $attend=$this->db->query("SELECT * FROM `attendance` WHERE std_id=?",$id);
                 return $attend->fetchAll();
+                // print_r($attend);die;
             }
         }
         else

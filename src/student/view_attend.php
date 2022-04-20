@@ -5,7 +5,6 @@ session_start();
 $id=$_SESSION['uid'];
 $student= new Student();
 $attends=$student->view_attend($id,$_SESSION['role']);
-// print_r($attends);die;
 if($_SESSION['role']=='student'){
   
   echo('<table class="content-table"> 
@@ -17,6 +16,7 @@ if($_SESSION['role']=='student'){
   </tr>
   </thead>
   <tbody>');
+  // print_r($attends);die ;
   
   $counter=0;
   foreach($attends as $attend)
