@@ -7,9 +7,15 @@ $admin    = new Admin();
 
 if(isset($_POST['class'])){
   $date = date('Y-m-d',time());
+  unset($_POST['class']); 
   foreach($_POST as $k => $v){
     $temp=$admin->attendence($k,$v,$date,$_SESSION['uid']);
   }
+  ?><script>
+    alert('attendence submit successfully');
+    location.href='../admin/index.php';
+    </script>
+    <?php
   return;
 }
 
@@ -33,9 +39,10 @@ echo('<form method="post" action="admin/std_attendence.php">
         </thead>
         <tbody>');
 
-$counter = 0
-;
+$counter = 1;
 foreach ($students as $student) {
+  echo"<pre>";
+  // print_r($student);
     $counter++;
     // if ($student["subjects"] == "") {
     //     $student["subjects"] = "<span class='text-danger'>None</span>";

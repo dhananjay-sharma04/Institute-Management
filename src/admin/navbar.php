@@ -61,15 +61,18 @@ elseif(!isset($_SESSION['role'])){
                 <li onclick="send_hw()">Upload</li>
             </ul>
         </li> 
-        <li onclick="std_attend()">
-            <div class="icon-link">
-                <i class="uil uil-user-check" ></i>
+        <li>
+            <div class="icon-link arrow">
+                <i class="uil uil-notes"></i>
                 <span class="link-name">Attendence</span>
+                <i class="uil uil-angle-down"></i>
             </div>
-            <ul class="sub-menu blank">
+            <ul class="sub-menu">
                 <li><span class="link-name">Attendence</span></li>
+                <li onclick="view_attend_std()">View</li>
+                <li onclick="std_attend()">Take Attendence</li>
             </ul>
-        </li>
+        </li> 
         <li  onclick="show_inquiry()" >
             <div class="icon-link">
                 <i class="uil uil-question-circle"></i>

@@ -175,7 +175,7 @@ class Structure
                     </section>
                     <!-- Dashboard Section complete -->
                     <script src="theme/javascript/home.js"></script>
-                    <script src="theme/javascript/validation.js"></script>
+                    <!-- <script src="theme/javascript/validation.js"></script> -->
             </body>
 
             </html>

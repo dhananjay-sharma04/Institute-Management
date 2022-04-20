@@ -31,13 +31,23 @@ class Student extends Config
             return $view->fetchArray();
         }
         
-    }
-    public function view_attend($id)
+    } 
+    public function view_attend($id,$role)
     {
-        if(isset($id))
+        // if(empty($date)) $date = date('Y-m-d',time());
+        // echo $id;die;
+        if($role=='student'){
+
+            if(isset($id))
+            {
+                $attend=$this->db->query("SELECT * FROM `attendance` WHERE std_id=? AND attend_date = ?",$id);
+                return $attend->fetchAll();
+            }
+        }
+        else
         {
-            $attend=$this->db->query("SELECT * FROM `attendance` WHERE std_id=?",$id);
-            return $attend->fetchAll();
+            $attend=$this->db->query("SELECT * FROM `attendance` WHERE 1");
+                return $attend->fetchAll();
         }
 
     }
@@ -47,6 +57,24 @@ class Student extends Config
         {
             $insert = $this->db->query("UPDATE `user` SET `password`=? WHERE `email`=?",$pass,$mail);
             return ($insert->affectedRows() > 0);
+        }
+
+    }
+    public function view_student($id)
+    {
+        if(isset($id))
+        {
+            $insert = $this->db->query("SELECT name FROM `user` WHERE uid=?",$id);
+            return $insert->fetchArray();
+        }
+
+    }
+    public function view_teacher($id)
+    {
+        if(isset($id))
+        {
+            $insert = $this->db->query("SELECT name FROM `user` WHERE uid=?",$id);
+            return $insert->fetchArray();
         }
 
     }

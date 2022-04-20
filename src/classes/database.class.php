@@ -26,7 +26,6 @@ class DB
         return $this;
     }
 
-
     public function query($query)
     {
         if ($this->query = $this->connection->prepare($query)) {
@@ -48,7 +47,7 @@ class DB
                 }
                 
                 array_unshift($args_ref, $types);
-                call_user_func_array(array($this->query, 'bind_param'), $args_ref);
+                call_user_func_array(array($this->query,'bind_param'), $args_ref);
             }
             $this->query->execute();
             // var_dump($this->connection);
