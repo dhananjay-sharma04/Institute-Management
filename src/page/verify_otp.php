@@ -29,17 +29,22 @@ if(isset($_POST['submit_otp']))
     // var_dump($_POST['otp']);
     // var_dump($_SESSION['otp']);
     if($_SESSION['otp']==is_numeric($_POST['otp'])){
-        session_destroy();
-        print_r($_SESSION['otp']);
-        // $update=new Student();
-        // $newpas=$update->change_pass($email,$pass);
+        $_SESSION['verified']='verified';
+        ?><script>
+        alert('otp verified');
+        location.href='../page/updatepass.php';
+        </script>
+        <?php
     }
-    else{print_r($_SESSION['otp']);?><script>
+    else{
+        unset($_POST);
+        unset($_SESSION);
+        ?><script>
         alert('please enter correct otp');
         // location.href='../page/forgotpassword.php';
         </script>
         <?php
-        print_r($_POST);
+        // print_r($_POST);
 
     }
 }

@@ -56,6 +56,7 @@ class Student extends Config
         if(isset($id))
         {
             $insert = $this->db->query("UPDATE `user` SET `password`=? WHERE `email`=?",$pass,$mail);
+            print_r($insert);die;
             return ($insert->affectedRows() > 0);
         }
 
