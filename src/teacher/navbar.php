@@ -34,8 +34,8 @@
                 <li onclick="send_hw()">Upload</li> 
             </ul>
         </li>
-        <li>
-            <div class="icon-link" onclick="std_attend()">
+        <li onclick="std_attend()">
+            <div class="icon-link" >
                 <i class="uil uil-user-check" ></i>
                 <span class="link-name">Attendence</span>
             </div>

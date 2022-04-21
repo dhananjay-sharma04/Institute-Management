@@ -16,14 +16,23 @@ elseif(!isset($_SESSION['role'])){
 <!-- Navigation Menu List -->
 <div class="menu-items">
     <ul class="nav-links">
-        <li>
+         <li>
             <div class="icon-link ">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
             </div>
                 <ul class="sub-menu blank">
-                    <li><span class="link-name">Home</span></li>
+                    <li><span class="link-name" href="">Home</span></li>
                 </ul>
+        </li>
+        <li onclick="update()">
+            <div class="icon-link">
+                <i class="uil uil-user" ></i>
+                <span class="link-name">Edit Profile</span>
+            </div>
+            <ul class="sub-menu blank">
+                <li><span class="link-name" >Edit Profile</span></li>
+            </ul>
         </li>
         <li> 
             <div class="icon-link arrow">

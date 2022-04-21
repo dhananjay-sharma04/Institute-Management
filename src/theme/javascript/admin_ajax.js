@@ -144,3 +144,15 @@ function showteacher(e){
         }
       });
 } 
+ function update(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'update'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 

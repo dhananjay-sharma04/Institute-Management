@@ -286,4 +286,32 @@ class Admin extends Config
 
         return $success;
     }
+    public function view_admin($id)
+    {
+        $success = false; // variable to return if insertion success or failed
+
+        // print_r($id);
+        // check if items to insert exists in the input array or note
+        if (isset($id)) {
+            $insert = $this->db->query("SELECT * FROM `user` WHERE `uid`=?", $id);
+
+            // if more than 1 row returned then it insertion was successfull
+            return $insert->fetchArray();
+        }
+
+        return $success;
+    }
+    public function update_admin($teacher_id, $teacher_name, $teacher_phone_number, $email, $password)
+    {
+        $success = false; // variable to return if insertion success or failed
+        // check if items to insert exists in the input array or note
+        if (isset($teacher_id) && isset($teacher_name) && isset($teacher_phone_number) && isset($email) && isset($password)) {
+            $insert = $this->db->query("UPDATE `user` SET `name`=?, `phone_number`=?, `email`=?, `password`=?,`role`=? WHERE `uid`=?", $teacher_name, $teacher_phone_number, $email, $password, 'admin', $teacher_id);
+            // if more than 1 row returned then it insertion was successfull
+            print_r($insert);
+            return ($insert->affectedRows() > 0);
+        }
+
+        return $success;
+    }
 }

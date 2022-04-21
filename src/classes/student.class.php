@@ -81,5 +81,24 @@ class Student extends Config
         }
 
     }
+    public function view_today_attend($date)
+    {
+        if(isset($date))
+        {
+            $attend = $this->db->query("SELECT count(attend) FROM `attendance` WHERE attend_date=? and attend=1",$date);
+            // print_r($attend);
+            return $attend->fetchArray();
+        }
+
+    }
+    public function count_std()
+    {
+        
+        $count = $this->db->query("SELECT count(role) FROM user WHERE role='student' ");
+        // print_r($attend);
+        return $count->fetchArray();
+    
+
+    }
     
 }
