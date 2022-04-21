@@ -3,22 +3,6 @@
     require "../classes/student.class.php";
     // $con=Structure::header('home');
 ?>
-<html>
-<section class="dashboard">
-    <!-- Dashboard Header -->
-    <div class="top">
-        <i class="uil uil-bars sidebar-toggle"></i>
-        <div class="search-box">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" placeholder="Search...">
-        </div>
-        
-        <div dropdown>
-        </div>
-    </div>
-    <!-- Dashboard Header complete -->
-    <!-- Dashboard content -->
-    <div class="dash-content">
     <!-- Dashboard Title -->
     <div class="title">
                         <i class="uil uil-estate"></i>
