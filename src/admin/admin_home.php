@@ -2,7 +2,7 @@
 
     require "../classes/student.class.php";
     // $con=Structure::header('home');
-?><link rel="stylesheet" href="../theme/css/home.css">
+?>
 <html>
 <section class="dashboard">
     <!-- Dashboard Header -->

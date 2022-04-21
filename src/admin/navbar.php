@@ -16,7 +16,7 @@ elseif(!isset($_SESSION['role'])){
 <!-- Navigation Menu List -->
 <div class="menu-items">
     <ul class="nav-links">
-         <li>
+         <li onclick="home()">
             <div class="icon-link ">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>

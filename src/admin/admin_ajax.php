@@ -3,6 +3,7 @@
     if(isset($_POST['request'])){
         switch($_POST['request']){
             case 'home':
+                 include("../admin/admin_home.php");
              break;
             case 'showstudents':
                 ?>

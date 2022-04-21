@@ -10,6 +10,19 @@ $(()=>{
         }
       });
 })
+function home(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'home'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 
+
 function showstudents(e){
     $.ajax({
         type: "POST",

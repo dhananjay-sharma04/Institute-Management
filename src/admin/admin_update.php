@@ -89,7 +89,7 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
     // echo'hello';
 }
 // Display Footer
-Structure::footer();
+// Structure::footer();
 
 // delete object
 unset($admin);
