@@ -53,6 +53,8 @@ const validate = () => {
     }
     else if(nameVal.length <= 5){
         setErrorMsg(name, 'Name should be 5 letter');
+    }else if(/[^a-zA-Z0-9\-\/]/.test(nameVal)){
+        setErrorMsg(name, 'Name letter');
     }
     else{
         setSuccessMsg(name);
