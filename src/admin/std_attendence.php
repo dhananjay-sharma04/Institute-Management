@@ -21,15 +21,17 @@ if(isset($_POST['class'])){
 
 $students = $admin->view_student(0, false,isset($_POST['stdclass']) ? $_POST['stdclass'] : '%');
 echo('<main role="main" style="display: flex;justify-content: center;">');
-echo('<form method="post" action="admin/std_attendence.php">
+echo('<form method="post" action="admin/std_attendence.php" class="myform">
         <table class="content-table">
         <thead>
-        <select name="class"  id="stdclass" onchange="std_attend($(this)[0].value)">
-          <option value=""disabled selected>choose your class </option>
-          <option value="10">10</option>
-          <option value="9">9</option>
-          <option value="8">8</option>
-        </select> 
+        <div class="choose">
+          <select name="class"  id="stdclass" onchange="std_attend($(this)[0].value)">
+            <option value=""disabled selected>choose your class </option>
+            <option value="10">10</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+          </select>
+        </div> 
           <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
@@ -59,7 +61,7 @@ foreach ($students as $student) {
       </tr>');
 }
 echo('</tbody></table>');
-echo(' <button name="class" type="submit">SUBMIT</button></form></main>');
+echo(' <button name="class" class="btn" type="submit">SUBMIT</button></form></main>');
 
 $admin->close_DB();
 

@@ -39,33 +39,47 @@ if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number"
 } else {
 
   // Form to fill details
-    echo('<main role="main" class="wrapper">');
+    echo('<main role="main" class="form-body">');
     // Structure::topHeading("");
     echo('
-          <form method="POST" action="admin/add_teacher.php">
+          <div class="container">
+          <div class="header">
+          <h3>New Teacher</h3>
+          </div>
+          <form method="POST" action="admin/add_teacher.php" class="myform" id="myform">
             <div class="field">
-              <input type="text" name="teacher_name" class="form-control" id="teacher_name" aria-describedby="teacher_name" required>
+              <input type="text" name="teacher_name" id="name" required>
               <label for="name">Name</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
             <div class="field">
-              <input type="number" name="teacher_phone_number" class="form-control" id="teacher_phone_number" aria-describedby="teacher_phone_number" required>
+              <input type="number" name="teacher_phone_number" id="phone" required>
               <label for="teacher_phone_number">Phone Number</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
             <div class="field">
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="email" required>
+              <input type="email" name="email" id="email" required>
               <label for="email">Email address</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
             <div class="field">
-              <input type="password" name="password" id="password" class="form-control" id="password" required>
+              <input type="password" name="password" id="password" required>
               <label for="password">Password</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
-            <div class="field">
-                <input type="submit" Value="Add"></input>
-            </div>
-            <div class="field">
-                <input type="reset" Value="Clear"></input>
-            </div>
+                <input type="submit" class="btn" Value="Add"></input>
+                <input type="reset" class="btn" Value="Clear"></input>
           </form>
+          <script src="theme/javascript/form.js"></script>
+        </div>
       </main>');
 }
 // Display Footer

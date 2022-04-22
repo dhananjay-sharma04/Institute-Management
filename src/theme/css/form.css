@@ -1,81 +1,147 @@
-::selection{
-    background: #0E4BF1;
-    color: #fff;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.wrapper{
-width: 380px;
-margin: auto;
-background: #fff;
-border-radius: 15px;
-box-shadow: 0px 0px 5px rgb(0 0 0 / 50%);
+:root{
+    --lg-lightcolor: linear-gradient(to left, rgba(116, 235, 213, 0.6), rgba(159, 172, 230, 0));
+    --lg-color: linear-gradient(to left, #74ebd5, #9face6);
 }
-.wrapper form{
-    padding: 10px 30px 50px 30px;
+.form-body{
+    /* background-color: grey; */
+    /* background-size: 100%; */
+    /* background-repeat: no-repeat; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* min-height: 100vh; */
+    /* width: 100vw; */
 }
-.wrapper form .field{
-    height: 50px;
+.form-body .container{
+    border-color: #fff;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    overflow: hidden;
+    width: calc(100vw - 65vw);
+    max-width: 100%;
+}
+.header{
+    background: var(--lg-color);
+    padding: 15px 0;
+}
+.header h3{
+    color: #222;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.myform{
+    padding: 40px;
+    background: #fff;
+}
+.field,
+.choose{
     width: 100%;
-    margin-top: 20px;
+    margin-bottom: 20px;
     position: relative;
 }
-.wrapper form .field input{
-    height: 100%;
+.field input,
+.choose select{
     width: 100%;
-    outline: none;
-    font-size: 17px;
-    padding-left: 20px;
-    border: 1px solid lightgrey;
-    border-radius: 25px;
+    font-size: 14px;
+    border: 2px solid #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    padding: 12px;
     transition: all 0.3s ease;
 }
-.wrapper form .field input:focus,
-form .field input:valid{
+.field input:focus,
+.field input:valid,
+.field select:focus{
+    outline: 0;
     border-color: #0E4BF1;
 }
-.wrapper form .field label{
+.field label{
     position: absolute;
     top: 50%;
-    left: 20px;
+    left: 15px;
     color: #999999;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 15px;
     pointer-events: none;
     transform: translateY(-50%);
     transition: all 0.3s ease;
 }
-form .field input:focus ~ label,
-form .field input:valid ~ label{
+.field input:focus ~ label,
+.field input:valid ~ label{
     top: 0%;
     font-size: 16px;
     color: #0E4BF1;
     background: #fff;
     transform: translateY(-50%);
 }
-form .field input[type="submit"]{
-    color: #fff;
+.field.error{
+    margin-bottom: 35px;
+}
+.field.success input{
+    border-color: #2ecc71;
+}
+.field.error input{
+    border-color: #e74c3c;
+}
+.field.error input:focus ~ label,
+.field.error input:valid ~ label{
+    color: #e74c3c;
+}
+.field.success input:focus ~ label,
+.field.success input:valid ~ label{
+    color: #2ecc71;
+}
+.field i{
+    position: absolute;
+    right: 12px;
+    top: 15px;
+    visibility: hidden;
+}
+.field.success i.fa-check-circle{
+    color: #2ecc71;
+    visibility: visible;
+}
+.field.error i.fa-exclamation-circle{
+    color: #e74c3c;
+    visibility: visible;
+}
+.field small{
+    color: #e74c3c;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+.field.error small{
+    visibility: visible;
+}
+.myform .btn{
+    background: var(--lg-color);
+    border-radius: 6px;
     border: none;
-    padding-left: 0;
-    margin-top: -10px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    background: linear-gradient(-135deg, #c850c0, #0E4BF1);
-    transition: all 0.3s ease;
-}
-form .field input[type="submit"]:active{
-    transform: scale(0.95);
-}
-form .field input[type="reset"]{
+    outline: none;
     color: #fff;
-    border: none;
-    padding-left: 0;
-    margin-top: -10px;
-    font-size: 20px;
-    font-weight: 500;
-    cursor: pointer;
-    background: linear-gradient(-135deg, #c850c0, #0E4BF1);
-    transition: all 0.3s ease;
+    display: block;
+    font-size: 16px;
+    padding: 15px;
+    margin-top: 20px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 1s ease;
 }
-form .field input[type="reset"]:active{
-    transform: scale(0.95);
+.myform .btn:hover{
+    background: linear-gradient(to right, #74ebd5, #9face6);
+}
+@media (max-width:998px) {
+    .container{
+        width: calc(100vw - 35vw);
+        max-width: 100%;
+    }
 }

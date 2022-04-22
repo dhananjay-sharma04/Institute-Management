@@ -42,36 +42,40 @@ if(isset($_POST['submit']))
 }
 ?>
 <html>
-<main class="wrapper">
-    <form action="teacher/send_hw.php" method="post" enctype="multipart/form-data">
+<main class="form-body">
+<div class="container">
+    <div class="header">
+        <h3>Upload Homework</h3>
+    </div>
+    <form action="teacher/send_hw.php" method="post" enctype="multipart/form-data" class="myform" id="myform">
         <div class="field">    
-            <input type="text" name="hw_title"  id="hw_title" required>
-            <label for="homework title">Homework title</label>
+            <input type="text" name="hw_title"  id="name" required>
+            <label>Homework title</label>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            <small>Error msg</small>
         </div>
-        <div class="">
-            <label for="Clas">Class</label>
-            <div class="class-list">
-                <select name="class" id="std" required>
-                    <option value="" disabled selected>choose your class </option>
-                    <option value="10">10</option>
-                    <option value="9">9</option>
-                    <option value="8">8</option>
-                </select>
-            </div>
+        <div class="choose">
+            <select name="class" id="std" required>
+                <option value="" disabled selected>choose your class </option>
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+            </select>
         </div>
         <div class="field">
-            <input type="text" name="hw_disc" id="hw_dis" required>
+            <input type="text" name="hw_disc" id="hw_disc" required>
             <label for="discip_of_hw">Discription</label>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+            <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+            <small>Error msg</small>
         </div>
         <div class="custom-file">
             <input type="file" name="hw_file" class="custom-file-input" id="validatedCustomFile">
         </div>
-        <div class="field">
-            <input type="submit" name="submit" value="Upload">
-        </div>
-        <div class="field">
-            <input type="reset" value="Clear">
-        </div>
+            <input type="submit" class="btn" name="submit" value="Upload">
+            <input type="reset" class="btn" value="Clear">
     </form>
+</div>
 </main>
 </html>

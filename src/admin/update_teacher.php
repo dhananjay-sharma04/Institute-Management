@@ -48,34 +48,49 @@ if (Structure::if_all_inputs_exists(array("teacher_id", "teacher_name", "teacher
       Structure::errorBox("Update Teacher", "Select a valid teacher!");
     } else {
       // Form to fill details
-      echo('<main role="main" class="container mt-3  mx-auto">');
-      Structure::topHeading("Update Teacher");
-      echo('<hr>
-          <form method="POST">
+      Structure::topHeading("");
+      echo('<div class="title">
+              <i class="uil uil-users-alt"></i>
+              <span class="text">View Teachers</span>
+            </div>');
+      echo('<main role="main" class="form-body">');
+      echo('<div class="container">
+              <div class="header">
+              <h3>Update Info</h3>
+            </div>
+          <form method="POST" class="myform" id="myform">
             <input type="hidden" name="teacher_id" value="'._esc($teacher["uid"]).'">
-            <div class="form-group">
+            <div class="field">
+              <input type="text" name="teacher_name" id="name" value="'._esc($teacher["name"]).'">
               <label for="name">Name</label>
-              <input type="text" name="teacher_name" class="form-control" id="teacher_name" aria-describedby="teacher_name" value="'._esc($teacher["name"]).'">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
-            <div class="form-group">
-              <label for="teacher_phone_number">Phone Number</label>
-              <input type="number" name="teacher_phone_number" class="form-control" id="teacher_phone_number" aria-describedby="teacher_phone_number" value="'._esc($teacher["phone_number"]).'">
+            <div class="field">
+              <input type="number" name="teacher_phone_number" id="phone" value="'._esc($teacher["phone_number"]).'">
+              <label>Phone Number</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
-            <div class="form-group">
+            <div class="field">
+              <input type="email" name="email" id="email" value="'._esc($teacher["email"]).'">
               <label for="email">Email address</label>
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="email" value="'._esc($teacher["email"]).'">
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" name="password" id="password" class="form-control" id="password" value="'._esc($teacher["password"]).'">
+            <div class="field">
+              <input type="password" name="password" id="password" value="'._esc($teacher["password"]).'">
+              <label>Password</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
-
-            <div class="row">
-              <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success btn-small">Submit</button>
-               </div>
-            </div>
+            <input type="submit" class="btn" Value="Update">
           </form>
+        <script src="theme/javascript/form.js"></script>
       </main>');
     }
 

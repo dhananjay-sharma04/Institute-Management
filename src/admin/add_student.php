@@ -32,44 +32,54 @@ if (Structure::if_all_inputs_exists(array("student_name", "student_phone_number"
 
   // Form to fill details
     echo('
-    <main role="main" class="wrapper">');
+    <main role="main" class="form-body">');
     Structure::topHeading("");
-    echo('
-          <form method="POST" action="admin/add_student.php" >
-            <div class="field">
-              <input type="text" name="student_name" class="form-control" id="student_name" aria-describedby="student_name" required>
-              <label for="name">Name</label>
+    echo('<div class="container">
+            <div class="header">
+             <h3>New Students</h3>
             </div>
-            <div class="">
-              <label for="Clas">Class</label>
-                <div class="class-list">
-                  <select name="class" id="std" required>
-                    <option value=""disabled selected>choose your class </option>
-                    <option value="10">10</option>
-                    <option value="9">9</option>
-                    <option value="8">8</option>
-                  </select> 
-                </div>
+          <form method="POST" action="admin/add_student.php" class="myform" id="myform">
+            <div class="field">
+              <input type="text" name="student_name" id="name" aria-describedby="student_name" required>
+              <label>Name</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
+            </div>
+            <div class="choose"> 
+              <select name="class" id="std" required>
+                <option value="none"disabled selected>Choose a Class</option>
+                <option value="10">10</option>
+                <option value="9">9</option>
+                <option value="8">8</option>
+              </select> 
             </div>
             <div class="field">
-              <input type="number" name="student_phone_number" class="form-control" id="student_phone_number" aria-describedby="student_phone_number" required>
+              <input type="number" name="student_phone_number" id="phone" aria-describedby="student_phone_number" required>
               <label for="student_phone_number">Phone Number</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
             <div class="field">
               <input type="email" name="email" class="form-control" id="email" aria-describedby="email" required>
               <label for="email">Email address</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
             <div class="field">
               <input type="password" name="password" id="password" class="form-control" id="password" required>
               <label for="password">Password</label>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
+              <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+              <small>Error msg</small>
             </div>
-            <div class="field">
-              <input type="submit" value="Add">
-            </div>
-            <div class="field">
-              <input type="reset" value="Clear">
-            </div>
+            <input type="submit" class="btn" value="Add">
+            <input type="reset" class="btn" value="Clear">
           </form>
+        </div>
+        <script src="theme/javascript/form.js"></script>
       </main>');
 }
 // Display Footer

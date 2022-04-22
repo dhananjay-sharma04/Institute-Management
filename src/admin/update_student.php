@@ -50,35 +50,47 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
     Structure::errorBox("Update Student", "Select a valid student!");
   } else {
         // Form to fill details
-        echo('<main role="main" class="container mt-3  mx-auto">');
-        Structure::topHeading("Update Student");
-        echo('<hr>
-          <form method="POST">
-            <input type="hidden" name="student_id" value="'._esc($student['uid']).'">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" name="student_name" class="form-control" id="student_name" aria-describedby="student_name" value="'._esc($student["name"]).'">
-            </div>
-            <div class="form-group">
-              <label for="student_phone_number">Phone Number</label>
-              <input type="number" name="student_phone_number" class="form-control" id="student_phone_number" aria-describedby="student_phone_number" value="'._esc($student["phone_number"]).'">
-            </div>
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" name="email" class="form-control" id="email" aria-describedby="email" value="'._esc($student["email"]).'">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" name="password" id="password" class="form-control" id="password" value="'._esc($student["password"]).'">
-            </div>
-
-            <div class="row">
-              <div class="col-sm-12">
-                  <button type="submit" class="btn btn-success btn-small">Submit</button>
-                  <a class="btn btn-primary btn-small" href="'.Structure::nakedURL("index.php").'" role="button">Go back!</a>
-               </div>
-            </div>
-          </form>
+        echo('<div class="title">
+                <i class="uil uil-book-reader"></i>
+                <span class="text">Update Students</span>
+              </div>');
+        echo('<main role="main" class="form-body">');
+        Structure::topHeading("");
+        echo('<div class="container">
+                <div class="header">
+                  <h3>Update Info</h3>
+                </div>
+                <form method="POST" class="myform" id="myform">
+                  <input type="hidden" name="student_id" value="'._esc($student['uid']).'">
+                  <div class="field">
+                    <input type="text" name="student_name" id="name" value="'._esc($student["name"]).'">
+                    <label>Name</label>
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    <small>Error msg</small>
+                  </div>
+                  <div class="field">
+                    <input type="number" name="student_phone_number" id="phone" value="'._esc($student["phone_number"]).'">
+                    <label>Phone Number</label>
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    <small>Error msg</small>
+                  </div>
+                  <div class="field">
+                    <input type="email" name="email" id="email" value="'._esc($student["email"]).'">
+                    <label>Email address</label>
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    <small>Error msg</small>
+                  </div>
+                  <div class="field">
+                    <input type="password" name="password" id="password" value="'._esc($student["password"]).'">
+                    <label>Password</label>
+                  </div>
+                  <input type="submit" class="btn" value="Update">
+                </form>
+              </div>
+            <script src="theme/javascript/form.js"></script>
       </main>');
     }
 

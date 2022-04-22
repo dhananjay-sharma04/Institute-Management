@@ -72,7 +72,7 @@ elseif(!isset($_SESSION['role'])){
         </li> 
         <li>
             <div class="icon-link arrow">
-                <i class="uil uil-notes"></i>
+                <i class="uil uil-user-check"></i>
                 <span class="link-name">Attendence</span>
                 <i class="uil uil-angle-down"></i>
             </div>
