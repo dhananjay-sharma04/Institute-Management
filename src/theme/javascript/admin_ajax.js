@@ -22,6 +22,18 @@ function home(e){
         }
       });
 } 
+function home_th(e){
+    $.ajax({
+        type: "POST",
+        url: 'admin/admin_ajax.php',
+        data: {
+            request: 'home_th'
+        },
+        success: (e)=>{
+            $('#main-content').html(e)
+        }
+      });
+} 
 
 function showstudents(e){
     $.ajax({

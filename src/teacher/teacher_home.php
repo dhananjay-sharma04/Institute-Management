@@ -13,35 +13,24 @@
     <div class="boxes">
         <div class="box box1">
             <i class="fa fa-user" aria-hidden="true"></i>
-            <span class="text">today Present</span>
+            <span class="text">Todays homework send</span>
             <span class="number"><?php
                 $studen=new Student();
                 $date = date('Y-m-d',time());
-                $present=$studen->view_today_attend($date);
-                echo $present['count(attend)'];
+                $present=$studen->count_hw($date);
+                echo $present['count(date)'];
             ?></span>
         </div>
         <div class="box box2">
             <i class="fa fa-users" aria-hidden="true"></i>
             <span class="text">Total Students</span>
             <span class="number">
-            <?php 
-                $total=$studen->count_std();
-                echo $total['count(role)'];
-            ?>
             </span>
         </div>
         <div class="box box3">
             <i class="fa fa-share" aria-hidden="true"></i>
             <span class="text">Total Inquiry</span>
-            <span class="number"><?php
-                // $studen=new Student();
-                // $date = date('Y-m-d',time());
-                // $present=$studen->count_inq($date);
-                $count_inq=$studen->count_inq($date);
-                // print_r($count_inq);
-                echo $count_inq['count(inq_date)'];
-            ?>
+            <span class="number">
             </span>
         </div>
     </div>

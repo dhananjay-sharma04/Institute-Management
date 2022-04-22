@@ -5,6 +5,9 @@
             case 'home':
                  include("../admin/admin_home.php");
              break;
+            case 'home_th':
+                 include("../teacher/teacher_home.php");
+             break;
             case 'showstudents':
                 ?>
                 <!-- Dashboard Title -->

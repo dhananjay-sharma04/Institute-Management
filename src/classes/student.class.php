@@ -100,5 +100,24 @@ class Student extends Config
     
 
     }
+    public function count_inq($date)
+    {
+        // print_r($date);die;
+        $count = $this->db->query("SELECT count(inq_date) FROM inquiry_table WHERE inq_date=?",$date);
+        // print_r($count);
+        return $count->fetchArray();
+    
+
+    }
+    public function count_hw($date)
+    {
+        // print_r($date);die;
+        $count = $this->db->query("SELECT count(date) FROM hw_table WHERE date=?",$date);
+        // print_r($count);
+        return $count->fetchArray();
+    
+
+    }
+
     
 }

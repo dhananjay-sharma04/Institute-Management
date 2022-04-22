@@ -1,7 +1,7 @@
 <!-- Navigation Menu List -->
 <div class="menu-items">
     <ul class="nav-links">
-        <li>
+        <li onclick="home_th()" >
             <div class="icon-link ">
                     <i class="uil uil-estate"></i>
                     <span class="link-name">Home</span>
@@ -33,7 +33,7 @@
                 <li onclick="view_hw()">View</li>
                 <li onclick="send_hw()">Upload</li> 
             </ul>
-        </li>
+        </li> 
         <li onclick="std_attend()">
             <div class="icon-link" >
                 <i class="uil uil-user-check" ></i>
