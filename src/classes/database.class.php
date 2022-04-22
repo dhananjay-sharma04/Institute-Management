@@ -5,7 +5,7 @@ class DB
     protected $connection;
     protected $query;
     public $query_count = 0;
-    // public $affected_rows = 0;
+    public $affected_rows = 0;
 
     public function __construct($dbhost = 'localhost', $dbuser = 'root', $dbpass = '', $dbname = '', $charset = 'utf8')
     {
@@ -57,6 +57,7 @@ class DB
                 unset($struct);
                 die();
             }
+            $this->affected_rows = $this->query->affected_rows;
             $this->query_count++;
         } else {
             echo('Unable to prepare statement (check your syntax) - ' . $this->connection->error);

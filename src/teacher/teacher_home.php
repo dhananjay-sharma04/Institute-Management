@@ -1,6 +1,7 @@
 <?php
 
     require "../classes/student.class.php";
+    // session_start();
     // $con=Structure::header('home');
 ?>
     <!-- Dashboard Title -->
@@ -15,9 +16,10 @@
             <i class="fa fa-user" aria-hidden="true"></i>
             <span class="text">Todays homework send</span>
             <span class="number"><?php
+                // print_r($_SESSION);
                 $studen=new Student();
                 $date = date('Y-m-d',time());
-                $present=$studen->count_hw($date);
+                $present=$studen->count_hw($date,$_SESSION['uid']);
                 echo $present['count(date)'];
             ?></span>
         </div>
@@ -25,6 +27,10 @@
             <i class="fa fa-users" aria-hidden="true"></i>
             <span class="text">Total Students</span>
             <span class="number">
+            <?php 
+                $total=$studen->count_std();
+                echo $total['count(role)'];
+            ?>
             </span>
         </div>
         <div class="box box3">

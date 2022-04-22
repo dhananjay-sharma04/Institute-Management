@@ -31,7 +31,7 @@ class Student extends Config
             return $view->fetchArray();
         }
         
-    } 
+    }  
     public function view_attend($id,$role)
     {
         // if(empty($date)) $date = date('Y-m-d',time());
@@ -55,10 +55,9 @@ class Student extends Config
     }
     public function change_pass($mail,$pass)
     {
-        if(isset($id))
+        if(!empty($mail) && !empty($pass))
         {
             $insert = $this->db->query("UPDATE `user` SET `password`=? WHERE `email`=?",$pass,$mail);
-            print_r($insert);die;
             return ($insert->affectedRows() > 0);
         }
 
@@ -109,10 +108,10 @@ class Student extends Config
     
 
     }
-    public function count_hw($date)
+    public function count_hw($date,$id)
     {
         // print_r($date);die;
-        $count = $this->db->query("SELECT count(date) FROM hw_table WHERE date=?",$date);
+        $count = $this->db->query("SELECT count(date) FROM hw_table WHERE date=? and id=?",$date,$id);
         // print_r($count);
         return $count->fetchArray();
     

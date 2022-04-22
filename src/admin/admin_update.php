@@ -18,7 +18,7 @@ session_start();
 // Check if form submitted
 if (Structure::if_all_inputs_exists(array("student_id","student_name","student_phone_number","email","password"), "POST") == true) {
     $admin = new Admin();
-    if ($admin->update_admin(
+    if ($r = $admin->update_admin(
         filter_input(INPUT_POST, "student_id", FILTER_DEFAULT),
         filter_input(INPUT_POST, "student_name", FILTER_DEFAULT),
         filter_input(INPUT_POST, "student_phone_number", FILTER_DEFAULT),
@@ -28,7 +28,7 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
         // On success
         // Structure::successBox("Update Student", "Successfully updated student!", Structure::nakedURL("view_students.php"));
         echo"<script>
-        alert('Successfully updated student!');
+        alert('Profile updation successfull!');
         location.href='admin_update.php';
       </script>";
     } else { 
@@ -54,7 +54,7 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
         echo('<main role="main" class="container mt-3  mx-auto">');
         // Structure::topHeading("Update Student");
         echo('<hr>
-          <form method="POST">
+          <form method="POST" action="admin/admin_update.php">
             <input type="hidden" name="student_id" value="'._esc($student['uid']).'">
             <div class="form-group">
               <label for="name">Name</label>

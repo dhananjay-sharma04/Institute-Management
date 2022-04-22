@@ -1,11 +1,11 @@
 <?php
-
     if(isset($_POST['request'])){
         switch($_POST['request']){
             case 'home':
+                session_start();
+                if($_SESSION['role'] == 'admin')
                  include("../admin/admin_home.php");
-             break;
-            case 'home_th':
+                else
                  include("../teacher/teacher_home.php");
              break;
             case 'showstudents':

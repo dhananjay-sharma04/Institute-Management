@@ -2,70 +2,51 @@
 require "../classes/structure.class.php";
 require "../classes/student.class.php";
 $con = Structure::header("Login");
-session_start();
-if(!isset($_SESSION['otp']))
-{
-    $_SESSION['otp']= rand(100000, 999999);
-}
-$email=$_SESSION['email'];
-$q="SELECT * FROM `user` WHERE email='$email'";
-$insert =mysqli_query($con,$q);
-$temp=mysqli_fetch_array($insert);
-// print_r($temp);
 
-if(!isset($temp['email']) && !isset($_POST['submit_otp']))
+if(isset($_SESSION['otp']) && $_GET['email'] && isset($_POST['submit_otp']))
 {
-    // session_destroy();
-    ?><script>
-    alert('please enter a valid email');
-    // location.href='../page/forgotpassword.php';
-    </script>
-    
-    <?php
-    
-}
-if(isset($_POST['submit_otp']))
-{
-    // var_dump($_POST['otp']);
-    // var_dump($_SESSION['otp']);
     if($_SESSION['otp']==is_numeric($_POST['otp'])){
-        $_SESSION['verified']='verified';
-        ?><script>
-        alert('otp verified');
-        location.href='../page/updatepass.php';
-        </script>
-        <?php
+        if(strcmp($_POST['pass'],$_POST['repass']) === 0){
+            $student=new Student();
+            
+            if($student->change_pass($_GET['email'], $_POST['repass']))
+            {
+                ?><script>
+                    alert('your password has been updated');
+                    location.href='../page/signin.php';
+                    </script>
+                
+                <?php
+            }else{
+                echo "<script>alert('Internal error occured')</script>";        
+            }
+            unset($_SESSION);
+        }else{
+            echo "<script>alert('Password does not match!')</script>";    
+        }
     }
     else{
-        unset($_POST);
-        unset($_SESSION);
-        ?><script>
-        alert('please enter correct otp');
-        // location.href='../page/forgotpassword.php';
-        </script>
-        <?php
-        // print_r($_POST);
-
+        echo "<script>alert('please enter correct otp')</script>";
     }
+}elseif(!isset($_GET['email'])){
+    header("Location:signin.php");
 }
-elseif(!isset($_POST['submit_otp'])){
-    $subject="to change your pass in ims";
-    $body="your otp to change the password id ".$_SESSION['otp']." enter this to change the password";
-    sendmail($body,$subject,$email);
-    echo('<form action="#" method="POST">
+
+?>    
+<form action="#" method="POST">
 <div class="form-group">
   <label for="email">Email address:</label>
-  <input type="email" name="email"class="form-control" id="email" value="'.$email.'" readonly="readonly">
+  <input type="email" name="email"class="form-control" id="email" value="<?= $_GET['email'] ?>" readonly="readonly">
   <br>
   <label for="otp">Enter otp:</label>
   <input type="number"class="form-control" name="otp" id="otp" placeholder="otp sned to your mail">
+  <br>
+  <label for=""> enter new pasword</label>
+    <input type="password" name="pass">
+    <br>
+    <label for=""> re-enter the password</label>
+    <input type="password" name="repass">
+    <br>
 </div>
 <button type="submit" name="submit_otp" class="btn btn-default">Submit</button>
-</form>');
-// print_r($_SESSION['otp']);
-
-    
-}
-
-
-?>
+</form>
