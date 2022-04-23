@@ -6,9 +6,13 @@ $con = Structure::header("Login");
 
 if(isset($_SESSION['otp']) && $_GET['email'] && isset($_POST['submit_otp']))
 {
-    if($_SESSION['otp']==is_numeric($_POST['otp'])){
+    $_POST['otp']=(int)$_POST['otp'];
+    // var_dump($_SESSION['otp']);
+    // var_dump($_POST['otp']);
+    if($_SESSION['otp']===$_POST['otp']){
         if(strcmp($_POST['pass'],$_POST['repass']) === 0){
             $student=new Student();
+            print_r(strcmp($_POST['pass'],$_POST['repass']));
             
             if($student->change_pass($_GET['email'], $_POST['repass']))
             {
@@ -22,7 +26,8 @@ if(isset($_SESSION['otp']) && $_GET['email'] && isset($_POST['submit_otp']))
                 echo "<script>alert('Internal error occured')</script>";        
             }
             unset($_SESSION);
-        }else{
+        }
+        else{
             echo "<script>alert('Password does not match!')</script>";    
         }
     }
