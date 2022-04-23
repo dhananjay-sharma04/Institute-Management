@@ -89,8 +89,8 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
               <small>Error msg</small>
             </div>
             <div class="buttons">
-              <input type="submit" class="btn" value="Edit">
-            </div
+              <input type="submit" class="btn" value="Update">
+            </div>
           </form>
         </div>
         <script src="theme/javascript/form.js"></script>

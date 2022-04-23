@@ -87,7 +87,9 @@ if (Structure::if_all_inputs_exists(array("student_id","student_name","student_p
                     <input type="password" name="password" id="password" value="'._esc($student["password"]).'">
                     <label>Password</label>
                   </div>
-                  <input type="submit" class="btn" value="Update">
+                  <div class="buttons">
+                    <input type="submit" class="btn" value="Update">
+                  </div>
                 </form>
               </div>
             <script src="theme/javascript/form.js"></script>

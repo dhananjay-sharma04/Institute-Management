@@ -88,7 +88,9 @@ if (Structure::if_all_inputs_exists(array("teacher_id", "teacher_name", "teacher
               <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
               <small>Error msg</small>
             </div>
-            <input type="submit" class="btn" Value="Update">
+            <div class="buttons">
+              <input type="submit" class="btn" value="Update">
+            </div>
           </form>
         <script src="theme/javascript/form.js"></script>
       </main>');

@@ -61,7 +61,9 @@ foreach ($students as $student) {
       </tr>');
 }
 echo('</tbody></table>');
-echo(' <button name="class" class="btn" type="submit">SUBMIT</button></form></main>');
+echo(' <div class="buttons">
+        <input type="submit" class="btn" name="class" value="Update Attendance">
+      </div></form></main>');
 
 $admin->close_DB();
 

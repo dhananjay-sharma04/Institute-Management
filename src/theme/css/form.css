@@ -4,41 +4,35 @@
     box-sizing: border-box;
 }
 :root{
-    --lg-lightcolor: linear-gradient(to left, rgba(116, 235, 213, 0.6), rgba(159, 172, 230, 0));
-    --lg-color: linear-gradient(to left, #74ebd5, #9face6);
+    --grey-color: #999999;
+    --white-color: #ffffff;
 }
 .form-body{
-    /* background-color: grey; */
-    /* background-size: 100%; */
-    /* background-repeat: no-repeat; */
     display: flex;
-    /* align-items: center; */
     justify-content: center;
-    /* min-height: 100vh; */
-    /* width: 100vw; */
 }
 .form-body .container{
-    border-color: #fff;
+    border-color: var(--white-color);
     border-radius: 10px;
     -webkit-border-radius: 10px;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 50%);
     overflow: hidden;
     width: calc(100vw - 65vw);
     max-width: 100%;
 }
 .header{
-    background: var(--lg-color);
+    background: var(--primary-color);
     padding: 15px 0;
 }
 .header h3{
-    color: #222;
-    font-size: 24px;
+    color: var(--white-color);
+    font-size: 20px;
     text-transform: uppercase;
     text-align: center;
 }
 .myform{
     padding: 30px;
-    background: #fff;
+    background: var(--panel-color);
 }
 .field,
 .choose{
@@ -56,17 +50,22 @@
     padding: 12px;
     transition: all 0.3s ease;
 }
+body.dark .field input,
+body.dark .choose select{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
 .field input:focus,
 .field input:valid,
 .field select:focus{
     outline: 0;
-    border-color: #0E4BF1;
+    border-color: var(--primary-color);
 }
 .field label{
     position: absolute;
     top: 50%;
     left: 15px;
-    color: #999999;
+    color: var(--grey-color);
     font-weight: 400;
     font-size: 15px;
     pointer-events: none;
@@ -80,6 +79,11 @@
     color: #0E4BF1;
     background: #fff;
     transform: translateY(-50%);
+}
+body.dark .field input:focus ~ label,
+body.dark .field input:valid ~ label{
+    background-color: var(--primary-color);
+    color: var(--white-color);
 }
 .field.error{
     margin-bottom: 35px;
@@ -125,63 +129,25 @@
     display: flex;
     justify-content: center;
 }
-.buttons .btn{
-    position: relative;
-    /* display: inline-block; */
-    color: #fff;
-    padding: 10px 40px;
-    border-radius: 5px;
-    background: linear-gradient(90deg, #025ce3, #4e94fd);
-    margin: auto;
-    font-size: 20px;
-    font-weight: 400;
-    /* text-decoration: none; */
-    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid rgba(0,0,0,0.1);
-    overflow: hidden;
-}
-.buttons .btn.two{
-    background: linear-gradient(90deg, #6616d0, #ac34e7);
-}
-/* .buttons .button .overlay{
-    position: absolute;
-    background: #fff;
-    top: 0;
-    left: 0;
-    transform: translate(-50%,-50%);
-    border-radius: 50%;
-    animation: blink 0.5s linear;
-}
-@keyframes blink {
-0%{
-    height: 0px;
-    width: 0px;
-    opacity: 0.3;
-}
-100%{
-    height: 400px;
-    width: 400px;
-    opacity: 0;
-  }
-} */
-/* .myform .btn{
-    background: var(--lg-color);
+.myform .btn{
+    background: var(--primary-color);
     border-radius: 6px;
     border: none;
     outline: none;
-    color: #fff;
+    color: var(--white-color);
     display: block;
     font-size: 16px;
     padding: 15px;
-    margin-top: 20px;
+    margin: 20px;
     width: 100%;
     font-weight: bold;
+    cursor: pointer;
     text-transform: uppercase;
     transition: all 1s ease;
 }
-.myform .btn:hover{
-    background: linear-gradient(to right, #74ebd5, #9face6);
-} */
+.myform .btn:active{
+    transform: scale(0.80);
+}
 @media (max-width:998px) {
     .container{
         width: calc(100vw - 35vw);

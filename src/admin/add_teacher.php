@@ -78,7 +78,7 @@ if (Structure::if_all_inputs_exists(array("teacher_name", "teacher_phone_number"
             <div class="buttons">
               <input type="submit" class="btn" value="Add">
               <input type="reset" class="btn two" value="Clear">
-            </div
+            </div>
           </form>
           <script src="theme/javascript/form.js"></script>
         </div>

@@ -1,10 +1,7 @@
-// if(typeof body == 'undefined'){
     var body = document.querySelector("body");
-// }
-
-modeToggle = body.querySelector(".mode-toggle");
-sidebar = body.querySelector("nav");
-sidebarToggle = body.querySelector(".sidebar-toggle");
+    modeToggle = body.querySelector(".mode-toggle");
+    sidebar = body.querySelector("nav");
+    sidebarToggle = body.querySelector(".sidebar-toggle");
 
 var getMode = localStorage.getItem("mode");
 if (getMode && getMode === "dark") {

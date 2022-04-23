@@ -73,8 +73,10 @@ if(isset($_POST['submit']))
         <div class="custom-file">
             <input type="file" name="hw_file" class="custom-file-input" id="validatedCustomFile">
         </div>
-            <input type="submit" class="btn" name="submit" value="Upload">
+        <div class="buttons">
+            <input type="submit" class="btn" name="submit" value="Add">
             <input type="reset" class="btn" value="Clear">
+        </div>
     </form>
 </div>
 </main>
