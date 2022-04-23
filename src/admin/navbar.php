@@ -127,11 +127,6 @@ elseif(!isset($_SESSION['role'])){
     <!-- Dashboard Header -->
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
-        <div class="search-box">
-            <i class="fa fa-search" aria-hidden="true"></i>
-            <input type="text" placeholder="Search...">
-        </div>
-        
         <div dropdown>
             <?php
                 echo $_SESSION['name'];

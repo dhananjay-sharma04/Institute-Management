@@ -65,9 +65,9 @@ if (isset($_POST['login'])) {
               <?php
               foreach ($users as $i => $u) {
                 if (isset($_GET['show']) && $u == $_GET['show']) {
-                  echo "<option value=\"$u\" selected>$u</option></a>";
+                  echo "<option value=\"$u\" selected>$u</option>";
                 } else {
-                  echo "<option value=\"$u\">$u</option></a>";
+                  echo "<option value=\"$u\">$u</option>";
                 }
               }
               ?>
@@ -78,7 +78,7 @@ if (isset($_POST['login'])) {
             <span class="input-group-text" id="basic-addon1">
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </span>
-            <input type="email" id="form2Example1" name="email" class="form-control" />
+            <input type="email" id="email" name="email" class="form-control" />
             <label class="form-label" for="form2Example1">Email address</label>
           </div>
 
@@ -87,7 +87,7 @@ if (isset($_POST['login'])) {
             <span class="input-group-text" id="basic-addon1">
               <i class="fa fa-key" aria-hidden="true"></i>
             </span>
-            <input type="password" id="form2Example2" name="password" class="form-control" />
+            <input type="password" id="password" name="password" class="form-control" />
             <label class="form-label" for="form2Example2">Password</label>
           </div>
 
@@ -96,8 +96,8 @@ if (isset($_POST['login'])) {
             <div class="col d-flex justify-content-center">
               <!-- Checkbox -->
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="form2Example34" />
-                <label class="form-check-label" for="form2Example34">Remember Me</label>
+                <input class="form-check-input" type="checkbox" value="lsRememberMe" id="rememberMe" />
+                <label class="form-check-label">Remember Me</label>
               </div>
             </div>
             <div class="col">
@@ -106,12 +106,7 @@ if (isset($_POST['login'])) {
             </div>
           </div>
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-4" name="login">Login</button>
-
-          <!-- Register buttons -->
-          <div class="text-center">
-            <p>Not a member? <a href="#!">Register</a></p>
-          </div>
+          <button type="submit" class="btn btn-primary btn-block mb-4" name="login" onclick="lsRememberMe()">Login</button>
         </form>
       </div>
     </div>

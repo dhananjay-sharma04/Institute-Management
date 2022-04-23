@@ -37,7 +37,7 @@
     text-align: center;
 }
 .myform{
-    padding: 40px;
+    padding: 30px;
     background: #fff;
 }
 .field,
@@ -121,7 +121,50 @@
 .field.error small{
     visibility: visible;
 }
-.myform .btn{
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.buttons .btn{
+    position: relative;
+    /* display: inline-block; */
+    color: #fff;
+    padding: 10px 40px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, #025ce3, #4e94fd);
+    margin: auto;
+    font-size: 20px;
+    font-weight: 400;
+    /* text-decoration: none; */
+    box-shadow: 3px 5px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.buttons .btn.two{
+    background: linear-gradient(90deg, #6616d0, #ac34e7);
+}
+/* .buttons .button .overlay{
+    position: absolute;
+    background: #fff;
+    top: 0;
+    left: 0;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    animation: blink 0.5s linear;
+}
+@keyframes blink {
+0%{
+    height: 0px;
+    width: 0px;
+    opacity: 0.3;
+}
+100%{
+    height: 400px;
+    width: 400px;
+    opacity: 0;
+  }
+} */
+/* .myform .btn{
     background: var(--lg-color);
     border-radius: 6px;
     border: none;
@@ -138,7 +181,7 @@
 }
 .myform .btn:hover{
     background: linear-gradient(to right, #74ebd5, #9face6);
-}
+} */
 @media (max-width:998px) {
     .container{
         width: calc(100vw - 35vw);
